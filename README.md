@@ -1,8 +1,15 @@
-# myportfolio2
+# 使用技術について
+<a href="https://ja.nuxtjs.org/">
+<img src="https://ja.nuxtjs.org/logos/nuxt.svg" width="120px" >
+<p>Nuxt.js　v.2.0.0</p>
+</a>
 
-> Nuxt.js project
+<a href="https://jp.vuejs.org/">
+<img src="https://jp.vuejs.org/images/logo.png" width="120px">
+<p>Vue.js　v.3.11.0</p>
+</a>
 
-## Build Setup
+## 起動方法
 
 ``` bash
 # install dependencies
@@ -19,6 +26,3 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
-# myportfolio

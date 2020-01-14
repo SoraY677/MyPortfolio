@@ -35,11 +35,12 @@ module.exports = {
       }
     }
   },
-  modules: ['@nuxtjs/style-resources'],
-  styleResources: {
-   scss: [
-    '~/assets/scss/_index.scss'
+  /*
+  共通のcss定義
+  */
+  css: [
+    '~/assets/css/titleStyle.css'
     ]
-  }
+  
 }
 

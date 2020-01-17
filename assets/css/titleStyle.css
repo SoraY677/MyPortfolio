@@ -1,36 +1,42 @@
-h1.double-line-title{
-    display:inline-block;
-    position:relative;
-  }
-  h1.double-line-title::before,h1.double-line-title::after{
-    position: absolute;
-    content:'';
-    animation: surround_title_anim 2s ease 0s 1 alternate;
-    opacity:0;
-  }
-  
-  h1.double-line-title::before{
-    border-top:1px solid #2e2e2e;
-    border-left:1px solid #2e2e2e;
-  }
-  
-  h1.double-line-title::after{
-    transform: scale(1, -1);
-    bottom:0;
-    right:0;
-    border-top:1px solid #2e2e2e;
-    border-right:1px solid #2e2e2e;
-  }
+h1.double-line-title {
+  display: inline-block;
+  position: relative;
+  margin:10px;
+}
 
-  @keyframes surround_title_anim{
-    0%{
-      width: 0;
-      height:0;
-      opacity : 1;
-    }
-    100%{
-      width:110%;
-      height:110%;
-      opacity : 1;
-    }
+h1.double-line-title::before, h1.double-line-title::after {
+  position: absolute;
+  content: '';
+  animation: surround_title_anim 1s linear 0s 1 alternate;
+  width: 115%;
+  height: 120%;
+  opacity: 1;
+}
+
+h1.double-line-title::before {
+  border-top: 3px double #2e2e2e;
+  border-left: 3px double #2e2e2e;
+  top: -5%;
+  left: -5%;
+}
+
+h1.double-line-title::after {
+  transform: scale(1, -1);
+  bottom: -5%;
+  right: -5%;
+  border-top: 3px double #2e2e2e;
+  border-right: 3px double #2e2e2e;
+}
+
+@keyframes surround_title_anim {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
   }
+  100% {
+    width: 115%;
+    height: 120%;
+    opacity: 1;
+  }
+}

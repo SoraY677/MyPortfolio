@@ -1,5 +1,6 @@
 <template>
   <div>
+    <myheader />
     <nuxt />
   </div>
 </template>
@@ -26,7 +27,6 @@ body {
   top: 0;
 }
 
-
 *,
 *:before,
 *:after {
@@ -34,3 +34,14 @@ body {
   margin: 0;
 }
 </style>
+
+<script>
+
+import myheader from "~/layouts/header"
+
+export default {
+  components:{
+    myheader
+  }
+}
+</script>

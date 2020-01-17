@@ -40,6 +40,7 @@ body {
 import myheader from "~/layouts/header"
 
 export default {
+  props:[""],
   components:{
     myheader
   }

@@ -1,26 +1,23 @@
-h1.double-line-title {
+.double-line-surround {
   display: inline-block;
   position: relative;
   margin:10px;
 }
 
-h1.double-line-title::before, h1.double-line-title::after {
+.double-line-surround::before, .double-line-surround::after {
   position: absolute;
   content: '';
-  animation: surround_title_anim 1s linear 0s 1 alternate;
-  width: 115%;
-  height: 120%;
-  opacity: 1;
+  display: none;
 }
 
-h1.double-line-title::before {
+.double-line-surround::before {
   border-top: 3px double #2e2e2e;
   border-left: 3px double #2e2e2e;
   top: -5%;
   left: -5%;
 }
 
-h1.double-line-title::after {
+.double-line-surround::after {
   transform: scale(1, -1);
   bottom: -5%;
   right: -5%;
@@ -28,7 +25,7 @@ h1.double-line-title::after {
   border-right: 3px double #2e2e2e;
 }
 
-@keyframes surround_title_anim {
+@keyframes surround_anim {
   0% {
     width: 0;
     height: 0;
@@ -40,3 +37,4 @@ h1.double-line-title::after {
     opacity: 1;
   }
 }
+

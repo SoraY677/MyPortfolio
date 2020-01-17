@@ -1,7 +1,7 @@
 <template>
-  <section di="index-page">
-    <h1 class="double-line-title test-margin">hogehoge</h1>
-  </section>
+    <diV>
+      
+    </diV>
 </template>
 
 <style>
@@ -10,3 +10,4 @@
   height:100%;
 }
 </style>
+

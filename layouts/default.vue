@@ -1,7 +1,7 @@
 <template>
   <div>
     <myheader />
-    <nuxt />
+    <mycontent />
   </div>
 </template>
 
@@ -38,11 +38,13 @@ body {
 <script>
 
 import myheader from "~/layouts/header"
+import mycontent from "~/layouts/content"
 
 export default {
   props:[""],
   components:{
-    myheader
+    myheader,
+    mycontent
   }
 }
 </script>

@@ -2,12 +2,14 @@
   display: inline-block;
   position: relative;
   margin:10px;
+  z-index:10;
 }
 
 .double-line-surround::before, .double-line-surround::after {
   position: absolute;
   content: '';
   display: none;
+  z-index:-1;
 }
 
 .double-line-surround::before {

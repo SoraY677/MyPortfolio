@@ -6,7 +6,9 @@
         v-for="headerItem in headerList"
         :key="headerItem.id"
       >
+      <nuxt-link :to="'/'+headerItem">
         {{ headerItem }}
+      </nuxt-link>
       </li>
     </ul>
   </header>
@@ -43,6 +45,7 @@ li.header-list-item {
 </style>
 
 <script>
+
 export default {
   data() {
     return {

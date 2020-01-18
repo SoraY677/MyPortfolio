@@ -6,7 +6,7 @@
         v-for="headerItem in headerList"
         :key="headerItem.id"
       >
-      <nuxt-link :to="'/'+headerItem">
+      <nuxt-link class="navigation-link" :to="'/'+headerItem">
         {{ headerItem }}
       </nuxt-link>
       </li>
@@ -28,7 +28,6 @@ ul.header-list {
 ul.header-list li.header-list-item {
   list-style: none;
   float: left;
-  padding: 10px;
   cursor: pointer;
 }
 
@@ -41,6 +40,13 @@ li.header-list-item {
   width: 115%;
   height: 120%;
   animation: surround_anim 0.3s ease-out 0s 1 alternate;
+}
+
+.navigation-link{
+  width:100%;
+  height:100%;
+  text-decoration: none;
+  color:#2e2e2e;
 }
 </style>
 

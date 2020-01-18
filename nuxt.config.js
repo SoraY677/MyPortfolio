@@ -41,7 +41,7 @@ module.exports = {
   共通のcss定義
   */
   css: [
-    '~/assets/css/titleStyle.css'
+    '~/assets/css/common.css'
     ]
   
 }

@@ -1,4 +1,6 @@
-# 使用技術について
+# 🎉[成果物](https://soray-portfolio.netlify.com/)
+
+# 🔧使用技術について
 <a href="https://ja.nuxtjs.org/">
 <img src="https://ja.nuxtjs.org/logos/nuxt.svg" width="120px" >
 <p>Nuxt.js　v.2.0.0</p>
@@ -9,7 +11,7 @@
 <p>Vue.js　v.3.11.0</p>
 </a>
 
-## 起動方法
+## 💡起動方法
 
 ``` bash
 # install dependencies

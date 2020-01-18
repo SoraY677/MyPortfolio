@@ -1,6 +1,6 @@
 <template>
   <div class="skill-card">
-      <img :src="'/svg/' + category + '/' + name + '.svg'" />
+      <img :src="'/img/' + category + '/' + name + '.svg'" />
     <div class="skill-detail">
       {{ name }}
     </div>

@@ -1,19 +1,12 @@
 <template>
     <section id="about-page" class="inner">
-        <div id="page-title-area" class="page-title flex-box">
-            <h1 class="double-line-surround">About</h1>
-        </div>
+        <pageTitle :title="'About'"/>
         <div id="page-content-area">
 
             <!-- 自己紹介セクション -->
             <section>
-                <div>
-                <h2 class="page-item-title">自己紹介</h2>
-                <span class="page-item-subtitle">Introduce</span>
-                </div>
-                <div>
+                <pageItemTitle :title="'自己紹介'" :subtitle="'introduce'"/>
 
-                </div>
             </section>
 
             <!-- 趣味・特技エリア -->
@@ -34,3 +27,14 @@
         </div>
     </section>
 </template>
+
+<script>
+import pageTitle from "~/components/pageTitle"
+import pageItemTitle from "~/components/pageitemtitle"
+export default {
+    components:{
+        pageTitle,
+        pageItemTitle
+    }
+}
+</script>

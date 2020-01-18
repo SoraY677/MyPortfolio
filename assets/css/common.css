@@ -18,19 +18,6 @@
 
 }
 
-/*各ページ項目ごとの題目装飾*/
-/*========================================*/
-.page-item-title{
-  width:fit-content;
-  padding: 0 0 0 0.2em;
-  border-bottom:1px solid #2e2e2e;
-}
-
-.page-item-title + .page-item-subtitle{
-  padding: 0 0 0 2%;
-}
-/*========================================*/
-
 
 /*二重線で囲まれるデザインとアニメーション*/
 /*========================================*/
@@ -76,14 +63,5 @@
       height: 120%;
       opacity: 1;
     }
-  }
-
-  /*各ページタイトル用*/
-  h1.double-line-surround::before,
-  h1.double-line-surround::after{
-    display: block;
-    animation: surround_anim 0.3s ease-out 0s 1 alternate;
-    width: 115%;
-    height: 120%;
   }
 /*========================================*/

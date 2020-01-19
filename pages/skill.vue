@@ -1,11 +1,11 @@
 <template>
   <section>
     <pageTitle :title="'Skill'" />
-    <section class="inner" v-for="item in items" :key="item.id">
+    <section class="inner" v-for="item in skillJson" :key="item.id">
       <pageItemTitle :title="item.title" :subtitle="item.subtitle" />
       <ul class="flex-box">
-          <li v-for="skillcard in item.cardlist" :key="skillcard.id">
-            <skillCard :category="item.subtitle" :name="skillcard.name" />
+          <li v-for="skillcard in item.cardList" :key="skillcard.id">
+            <skillCard :category="skillcard" :name="skillcard.name" />
           </li>
       </ul>
     </section>
@@ -33,16 +33,10 @@ export default {
     pageItemTitle,
     skillCard
   },
-  data() {
-    return {
-      items: {
-        language: {
-          title: "言語系",
-          subtitle: "language",
-          cardlist: [{ name: "html5" }, { name: "css3" },{name:"php"},{name:"nodejs"}]
-        }
-      }
-    };
+  asyncData({store}){
+    return{
+      skillJson: store.getters['getSkillJson']
+    }
   }
 };
 </script>

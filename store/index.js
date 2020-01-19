@@ -1,10 +1,11 @@
+import skillJsonData from "~/assets/json/skill.json"
+
 export const state = () => ({
-  pageState: "index"
+  skillJson :skillJsonData
 });
 
-export const mutations = {
-  changePage(state, pageState) {
-    state.pageState = pageState;
+export const getters = {
+  getSkillJson(state){
+    return state.skillJson
   }
-};
-
+}

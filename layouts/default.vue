@@ -20,8 +20,7 @@ html {
 
 body {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width:100%;
   margin:0;
   left: 0;
   top: 0;

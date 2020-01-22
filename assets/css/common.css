@@ -12,6 +12,10 @@
 
 }
 
+section.container{
+  margin-bottom:10%;
+}
+
 /*二重線で囲まれるデザインとアニメーション*/
 /*========================================*/
 .double-line-surround {

@@ -10,8 +10,9 @@
 <style scoped>
 
 .skill-card{
-  width:100%;
   display: flex;
+  width:100%;
+  margin-bottom:20%;
   flex-wrap: wrap;
   justify-content: space-around;
 }

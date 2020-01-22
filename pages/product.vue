@@ -24,8 +24,6 @@ export default {
       productList:[
         {name:"hogehoge"} 
       ]
-
-      
     }
   },
   components: {

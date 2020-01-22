@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-item-block">
     <h2 class="page-item-title">{{title}}</h2>
     <span class="page-item-subtitle">{{subtitle}}</span>
   </div>
@@ -12,6 +12,10 @@ export default {
 </script>
 
 <style scoped>
+.page-item-block{
+  margin-bottom:2em;
+}
+
 .page-item-title{
   width:fit-content;
   padding: 0 0 0 0.2em;

@@ -21,6 +21,7 @@ html {
 body {
   position: absolute;
   width:100%;
+  min-height:100vh;
   margin:0;
   left: 0;
   top: 0;

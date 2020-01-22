@@ -1,9 +1,9 @@
 <template>
-  <section>
+  <section class="inner">
     <pageTitle :title="'Product'" />
     <ul class="flex-box">
-      <li v-for="productItem in productList" :key="productItem.id">
-        <productCard :name="productItem.name"/>  
+      <li v-for="productItem in productJson" :key="productItem.id">
+        <productCard :name="productItem.name" :skill="productItem.skill" :description="productItem.description" :link="productItem.link"/>  
       </li>
     </ul>
   </section>
@@ -19,11 +19,9 @@
 import pageTitle from "~/components/pagetitle";
 import productCard from "~/components/productcard"
 export default {
-  data(){
+  asyncData({store}){
     return{
-      productList:[
-        {name:"hogehoge"} 
-      ]
+      productJson: store.getters['getProductJson']
     }
   },
   components: {

@@ -29,6 +29,6 @@ img{
 
 <script>
 export default {
-  props: ['category', 'name'],
+  props: ['name'],
 };
 </script>

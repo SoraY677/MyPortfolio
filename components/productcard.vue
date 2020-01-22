@@ -7,7 +7,13 @@
       </div>
     </div>
 
-    <productModal v-show="isModalShowed" v-on:closeModalRequest="closeModal" />
+    <productModal 
+    :name="name"
+    :skill="skill"
+    :description="description"
+    :link="link"
+    v-show="isModalShowed" 
+    v-on:closeModalRequest="closeModal" />
   </section>
 </template>
 
@@ -15,6 +21,7 @@
 section.product-card {
   width: 100%;
   height: 50vh;
+  border: 1px solid #2e2e2e;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -37,10 +44,19 @@ section.product-card {
   align-items: center;
 }
 
-section.product-card:hover .product-thumbnail img {
-  transform: scale(1.2);
+.product-thumbnail{
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-section.product-card:hover .product-name {
+
+.product-thumbnail:hover .product-thumbnail img {
+  transform: scale(1.2);
+  box-shadow: 2px 2px 2px #2e2e2e;
+}
+.product-thumbnail:hover .product-name {
   opacity: 1;
 }
 .product-thumbnail {
@@ -49,11 +65,8 @@ section.product-card:hover .product-name {
   width: 100%;
   overflow: hidden;
 }
-
-img {
-  width: 100%;
-  height: 100%;
-  transition-duration: 0.3s;
+img{
+  width:calc(300%/2);
 }
 </style>
 
@@ -65,7 +78,7 @@ export default {
       isModalShowed: false
     };
   },
-  props: ["name", "language", "experience", "level", "desription"],
+  props: ["name", "skill", "description", "link"],
   components: {
     productModal
   },

@@ -1,7 +1,7 @@
 <template>
-  <section >
+  <section class="inner">
     <pageTitle :title="'Skill'" />
-    <section class="inner container" v-for="item in skillJson" :key="item.id">
+    <section v-for="item in skillJson" :key="item.id">
       <pageItemTitle :title="item.title" :subtitle="item.subtitle" />
       <ul>
           <li v-for="skillcard in item.cardList" :key="skillcard.id">

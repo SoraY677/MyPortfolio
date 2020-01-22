@@ -52,6 +52,15 @@
         {"name":"IntelliJ","level":1},
         {"name":"VisualStudioCode","level":1}
         ]
+    },
+    "Qualification":{
+        "title":"資格",
+        "subtitle":"other",
+        "cardList":[
+            {"name":"ITパスポート","level":0},
+            {"name":"基本情報技術者","level":0},
+            {"name":"応用情報技術者","level":0}
+        ]
     }
 
 }

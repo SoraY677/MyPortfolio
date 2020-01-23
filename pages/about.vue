@@ -8,15 +8,25 @@
             <introduceCard/>
             </section>
             <!-- 趣味・特技エリア -->
-            <section>
-                 <pageItemTitle :title="'趣味・特技'" :subtitle="'hobby'"/>
-            </section>
+            <div class="flex-box">
+                <section class="two-equally">
+                <pageItemTitle :title="'趣味'" :subtitle="'hobby'"/>
+                <introduceDetail :title="'ooo'" :content="'hoge'"  />
+                </section>
+                <section class="two-equally">
+                <pageItemTitle :title="'特技'" :subtitle="'hobby'"/>
+                <introduceDetail :title="'ooo'" :content="'hoge'" />
+                </section>
+            </div>
 
             <!-- 所属団体エリア -->
-            <section>
-                <section>
-                    <pageItemTitle :title="'所属団体'" :subtitle="' '"/>
-                </section>
+            <section class="introduce">
+                <pageItemTitle :title="'所属団体'" :subtitle="' '"/>
+                <div class="flex-box">
+                    <introduceDetail class="three-equally" :title="'デジタルコンテンツ研究会'" :content="'ほげ'" />
+                    <introduceDetail class="three-equally" :title="'横浜分室'" :content="'ほげ'" />
+                    <introduceDetail class="three-equally" :title="'学生会'" :content="'ほげ'" />
+                </div>
             </section>
 
             <!-- 研究室 -->
@@ -25,9 +35,16 @@
             </section>
 
             <!-- アルバイト・その他 -->
-            <section>
+            <div class="flex-box">
+                <section class="two-equally">
+                <pageItemTitle :title="'アルバイト'" :subtitle="'other'"/>
+                <introduceDetail :title="'飲食店のキッチン'" :content="'ほげ'"/>
+                </section>
+                <section class="two-equally">
                 <pageItemTitle :title="'その他'" :subtitle="'other'"/>
-            </section>
+                <introduceDetail :title="'飲食店のキッチン'" :content="'ほげ'"/> 
+                </section>
+            </div>
 
             <!--経歴 -->
             <section>
@@ -41,11 +58,13 @@
 import pageTitle from "~/components/pagetitle"
 import pageItemTitle from "~/components/pageitemtitle"
 import introduceCard from "~/components/introducecard"
+import introduceDetail from "~/components/introducedetail"
 export default {
     components:{
         pageTitle,
         pageItemTitle,
-        introduceCard
+        introduceCard,
+        introduceDetail
     }
 }
 </script>

@@ -5,6 +5,10 @@
 </template>
 
 <style scoped>
+  .page-title{
+    margin-bottom:3%;
+  }
+
   h1.double-line-surround::before,
   h1.double-line-surround::after{
     display: block;

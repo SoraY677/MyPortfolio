@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .introduce-picture{
         width:40%;
         float:left;

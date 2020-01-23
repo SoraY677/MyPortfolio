@@ -1,13 +1,16 @@
 <template>
-  <div class="skill-card">
-    <img :src="'/img/skill/' + name + '.svg'" />
-    <div class="skill-detail">
-      {{ name }}
-      <span class="level-number" :class="colorLevel(level)">
-      {{'Level.'+level}}
-      </span>
+  <section class="skill-card">
+    <div class="skill-icon" v-if="category!='資格'">
+      <img :src="'/img/skill/' + name + '.svg'" />
     </div>
-  </div>
+    <div class="skill-detail">
+      <h3>{{ name }}</h3>
+      <span class="level-number" :class="colorLevel(level)">
+        {{ "Level." + level }}
+      </span>
+      <span>{{experience+" ~"}}</span>
+    </div>
+  </section>
 </template>
 
 <style scoped>
@@ -19,42 +22,54 @@
   justify-content: space-around;
 }
 
-img {
-  width: 50%;
+.skill-icon {
+  display: flex;
+  width:15vh;
+  height:15vh;
+  justify-content: center;
+  align-items: center;
+}
+.skill-icon img {
+  width: 80%;
+  height: 80%;
 }
 
 .skill-detail {
   text-align: center;
   width: 100%;
 }
-.level-number{
-  display: block;
-}
-.skill-level1{
-color:#0079c2
-}
-.skill-level2{
-color:#019a66
-}
-.skill-level3{
- color:#ffcc33
-}
-.skill-level4{
-  color:#ff6600
-}
-.skill-level5{
-  color:#ff3333
-}
-.skill-level-undefined{
-  display:none;
-}
 
+.skill-detail h3{
+  font-size:1.5em;
+} 
+.level-number {
+  display: block;
+  font-weight: bolder;
+}
+.skill-level1 {
+  color: #0079c2;
+}
+.skill-level2 {
+  color: #019a66;
+}
+.skill-level3 {
+  color: #ffcc33;
+}
+.skill-level4 {
+  color: #ff6600;
+}
+.skill-level5 {
+  color: #ff3333;
+}
+.skill-level-undefined {
+  display: none;
+}
 
 </style>
 
 <script>
 export default {
-  props: ["name", "level"],
+  props: ["category","name", "level","experience"],
   methods: {
     //スキルレベルによって色を変える
 
@@ -72,7 +87,7 @@ export default {
           ret += "-undefined";
           break;
       }
-      return ret
+      return ret;
     }
   }
 };

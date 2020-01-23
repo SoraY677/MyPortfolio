@@ -13,7 +13,7 @@ export default {
 
 <style scoped>
 .page-item-block{
-  margin-bottom:2em;
+  margin-bottom:1%;
 }
 
 .page-item-title{

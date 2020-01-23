@@ -1,5 +1,7 @@
 module.exports = {
-
+  modules:[
+  'nuxt-fontawesome'
+  ],
   mode: 'spa',
   /*
   ** Headers of the page
@@ -42,7 +44,15 @@ module.exports = {
   */
   css: [
     '~/assets/css/common.css'
-    ]
+    ],
+    fontawesome: {
+      imports: [
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['fas']
+        }
+      ]
+    }
   
 }
 

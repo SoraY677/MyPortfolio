@@ -3,7 +3,7 @@
     <pageTitle :title="'Product'" />
     <ul class="flex-box">
       <li v-for="productItem in productJson" :key="productItem.id">
-        <productCard :name="productItem.name" :skill="productItem.skill" :description="productItem.description" :link="productItem.link"/>  
+        <productCard :name="productItem.name" :dev="productItem.dev" :skill="productItem.skill" :description="productItem.description" :link="productItem.link"/>  
       </li>
     </ul>
   </section>

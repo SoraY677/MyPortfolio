@@ -9,6 +9,7 @@
 
     <productModal 
     :name="name"
+    :dev="dev"
     :skill="skill"
     :description="description"
     :link="link"
@@ -78,7 +79,7 @@ export default {
       isModalShowed: false
     };
   },
-  props: ["name", "skill", "description", "link"],
+  props: ["name", "dev", "skill", "description", "link"],
   components: {
     productModal
   },

@@ -1,7 +1,7 @@
 <template>
   <div>
     <myheader />
-    <mycontent />
+    <mycontent class="inner"/>
   </div>
 </template>
 
@@ -37,6 +37,10 @@ body {
 
 li{
   list-style: none;
+}
+
+section{
+  overflow: hidden;
 }
 </style>
 

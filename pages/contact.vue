@@ -4,8 +4,9 @@
     <form>
       <section v-for="contentitem in contents" :key="contentitem.id">
       <h2>{{contentitem.title}}</h2>
-      <textarea :style="'height:'+contentitem.height"></textarea>
+      <textarea type="text" :style="'height:'+contentitem.height"></textarea>
       </section>
+      <button>送信</button>
     </form>
   </section>
 </template>
@@ -15,8 +16,10 @@
     display: inherit;
     width:85%;
     font-size:20px;
-    margin: 0 auto;
-
+    border-radius: 10px;
+  }
+  textarea:scope{
+    border:none;
   }
 </style>
 

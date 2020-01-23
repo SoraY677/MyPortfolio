@@ -5,7 +5,7 @@
       <pageItemTitle :title="item.title" :subtitle="item.subtitle" />
       <ul>
           <li v-for="skillcard in item.cardList" :key="skillcard.id">
-            <skillCard :category="skillcard" :name="skillcard.name" />
+            <skillCard :category="skillcard" :name="skillcard.name" :level="skillcard.level"/>
           </li>
       </ul>
     </section>

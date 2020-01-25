@@ -40,13 +40,19 @@
   align-items: center;
   z-index: 99;
   background-color: rgba(0, 0, 0, 0.3);
+  overflow-y: hidden;
 }
 
 .modal-window {
+  position: fixed;
+  overflow-y: auto;
+  top:0;
+  margin:5% auto;
   animation: test 0.3s linear 0s 1 alternate;
   z-index: 100;
   background-color: #ffffff;
   width: 74%;
+  height:90%;
   border-radius: 20px;
   padding: 3%;
 }
@@ -79,16 +85,15 @@
   width: 100%;
 }
 
-.thumbnail > img {
-  height: 100%;
-  border: 1px solid #2e2e2e;
+.thumbnail {
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.thumbnail {
-  display: flex;
-  justify-content: center;
-  height: 40vh;
-  overflow: hidden;
+.thumbnail > img {
+  height:100%;
+  border: 1px solid #2e2e2e;
 }
 
 .modal-window h3 {

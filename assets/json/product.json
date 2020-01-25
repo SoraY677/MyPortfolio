@@ -1,5 +1,5 @@
-{
-    "hoge":{
+[
+    {
         "name":"横浜分室ホームページ",
         "skill":["HTML5","CSS3","javascript","jquery"],
         "dev":"2018.10~12",
@@ -9,10 +9,10 @@
         "他団体をまとめているため、分室の情報についてわかりやすく発信する必要があるので、UIを改善するためにシンプルで操作性の良いように回収しました。"
         ],
         "link":{
-            "github":"https://github.com"
+            "homepage":"https://github.com"
         }
     },
-    "fuga":{
+    {
         "name":"大谷研究室_夏の事例研究コンペ",
         "skill":["C++"],
         "dev":"2019.7~8",
@@ -25,5 +25,16 @@
             "github":"https://github.com",
             "qiita":"https://qiita.com/SoraY677/items/6f84fd8e41a41def3a7b"
         }
+    },
+    {
+        "name":"横浜分室アンケート機能",
+        "skill":["HTML5","CSS3","javascript","nodejs"],
+        "dev":"2018.1~3",
+        "description":[
+        ],
+        "link":{
+            "HP":"https://soray677-portfolio.netlify.com/"
+        }
     }
-}
+
+]   

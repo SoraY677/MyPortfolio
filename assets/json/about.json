@@ -1,0 +1,84 @@
+{
+    "introduce":{
+        "title":"自己紹介",
+        "subtitle":"introduce",
+        "name":"山口宙来/Yamaguchi Sora",
+        "content":[
+            ""
+        ],
+        "link":{
+            "github":"https://github.com/SoraY677"
+        }
+    },
+    "hobby":{
+        "title":"趣味",
+        "subtitle":"hobby",
+        "category":[
+            "犬と遊ぶ🐶",
+            "プログラミング",
+            "筋トレ(最近出来てない)"
+        ],
+        "content":[
+            ""
+        ]
+    },
+    "affiliation":{
+        "title":"所属団体",
+        "subtitle":"affiliation",
+        "orglist":[
+            {
+                "name":"学生団体連合会-横浜分室",
+                "job":"元会計・現執行委員",
+                "content":[
+
+                ],
+                "link":{
+                    "HP":"https://www.comm.tcu.ac.jp/bunsitu/"
+                }
+            },
+            {
+                "name":"デジタルコンテンツ研究会",
+                "job":"PG班班長",
+                "content":[
+
+                ],
+                "link":{
+                    "HP":"https://tcu-dc.net/"
+                }
+            },
+            {
+                "name":"情報システム学科学生会",
+                "job":"企画・アイデア出し",
+                "content":[
+
+                ],
+                "link":{
+                    "twitter":"https://twitter.com/tcu_is"
+                }
+            }
+        ]
+    },
+    "lab":{
+        "title":"研究室",
+        "subtitle":"lab",
+        "content":[
+            ""
+        ],
+        "link":{
+            "homepage":"https://www.comm.tcu.ac.jp/otani-lab/"
+        }
+    },
+    "career":{
+        "title":"経歴",
+        "subtitle":"career",
+        "list":[
+            {
+
+            },
+            {
+                
+            }
+
+        ]
+    }
+}

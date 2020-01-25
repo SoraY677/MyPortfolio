@@ -13,6 +13,12 @@
   li{
     width:45%;
   }
+
+  @media screen and (max-width: 480px){
+    li{
+      width:100%;
+    }
+  }
 </style>
 
 <script>

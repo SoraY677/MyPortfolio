@@ -1,11 +1,12 @@
 <template>
   <section>
       <div class="introduce-picture">
-        <img src="/img/product/横浜分室ホームページ.png">
+        <img src="/img/about/icon.png">
       </div>
       <div class="introduce-detail">
-      <h2>hoge太郎</h2>
-      <p>~~~~~~~~~~~~~~~~~~~自己紹介文~~~~~~~~~~~</p>
+      <h2>{{name}}</h2>
+      <p v-for="el in content" :key="el.id">{{el}}</p>
+      <a target="_blank" v-for="(value,key) in link" :key="key" :href="value">{{key}}</a>
       </div>
   </section>
 </template>
@@ -23,6 +24,9 @@ export default {
         display:flex;
         justify-content: center;
         align-items: center;
+        border-radius: 50%;
+        border:2px solid #2e2e2e; 
+        overflow: hidden;
     }
 
     .introduce-picture > img{
@@ -37,3 +41,9 @@ export default {
 
 
 </style>
+
+<script>
+export default {
+    props:['name','content','link']
+}
+</script>

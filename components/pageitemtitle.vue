@@ -17,9 +17,10 @@ export default {
 }
 
 .page-item-title{
+  min-width: 6em;
   width:fit-content;
   padding: 0 0 0 0.2em;
-  border-bottom:1px solid #2e2e2e;
+  border-bottom:1px double #778899;
 }
 
 .page-item-title + span{

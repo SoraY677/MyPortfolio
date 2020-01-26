@@ -23,6 +23,11 @@ section.container{
   margin-bottom:10%;
 }
 
+@media screen and (max-width:640px){
+  .three-equally{
+    width:90%;
+  }
+}
 
 
 /*二重線で囲まれるデザインとアニメーション*/

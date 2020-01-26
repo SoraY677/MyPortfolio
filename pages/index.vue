@@ -1,13 +1,16 @@
 <template>
-    <diV>
-      
-    </diV>
+    <topPage />
 </template>
 
-<style>
-.test-margin{
-  margin:10px;
-  height:100%;
+<script>
+import topPage from "~/pages/top"
+export default {
+    components:{
+        topPage
+    }
 }
-</style>
+</script>
 
+<style>
+
+</style>

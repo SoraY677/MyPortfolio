@@ -9,7 +9,7 @@
         "他団体をまとめているため、分室の情報についてわかりやすく発信する必要があるので、UIを改善するためにシンプルで操作性の良いように回収しました。"
         ],
         "link":{
-            "homepage":"https://github.com"
+            "HP":"https://www.comm.tcu.ac.jp/bunsitu/"
         }
     },
     {
@@ -22,7 +22,7 @@
             "開発にあたり、一度客観的に課題の問題点を整理し、既存の方法以外に自身で考え出した独自の手法を取り入れることで最後のコンペでは見事に1位を取ることができました。"
         ],
         "link":{
-            "github":"https://github.com",
+            "github":"https://github.com/SoraY677/Otanilab_ECACompetition2019_BeeColony",
             "qiita":"https://qiita.com/SoraY677/items/6f84fd8e41a41def3a7b"
         }
     },
@@ -33,7 +33,7 @@
         "description":[
         ],
         "link":{
-            "HP":"https://soray677-portfolio.netlify.com/"
+            "Site":"https://soray677-portfolio.netlify.com/"
         }
     }
 

@@ -6,44 +6,53 @@
       <div class="introduce-detail">
       <h2>{{name}}</h2>
       <p v-for="el in content" :key="el.id">{{el}}</p>
-      <a target="_blank" v-for="(value,key) in link" :key="key" :href="value">{{key}}</a>
+      <alink v-for="(value,key) in link" :key="value.id" :linkname="key" :linkpath="value" />
       </div>
   </section>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style scoped>
     .introduce-picture{
-        width:40%;
+        width:20%;
         float:left;
+        margin-left:10%;
         display:flex;
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        border:2px solid #2e2e2e; 
+        border:1px solid #778899; 
         overflow: hidden;
     }
 
     .introduce-picture > img{
-        width:100%;
+        width:100%
 
     }
 
     .introduce-detail{
         width:60%;
+        margin-left:3%;
         float:left;
     }
 
+    @media screen and (max-width:640px) {
+        .introduce-picture{
+            width:80%;
+
+        }
+        .introduce-detail{
+            width:90%;
+        }
+    }
 
 </style>
 
 <script>
+import alink from "~/components/link"
 export default {
-    props:['name','content','link']
+    props:['name','content','link'],
+    components:{
+        alink
+    }
 }
 </script>

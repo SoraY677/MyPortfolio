@@ -55,7 +55,7 @@ li.header-list-item {
 export default {
   data() {
     return {
-      headerList: ["About", "Skill", "Product"]
+      headerList: ["Top","About", "Skill", "Product"]
     };
   }
 };

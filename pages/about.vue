@@ -1,5 +1,5 @@
 <template>
-  <section id="about-page">
+  <section id="about-page" class="inner">
     <pageTitle :title="'About'" />
     <div id="page-content-area">
       <section>
@@ -54,15 +54,31 @@
           :title="productJson.lab.title"
           :subtitle="productJson.lab.subtitle"
         />
+        <labCard
+          :labname="productJson.lab.labname"
+          :teacher="productJson.lab.teacher"
+          :labthema="productJson.lab.labthema"
+          :mythema="productJson.lab.mythema"
+          :content="productJson.lab.content"
+          :link="productJson.lab.link"
+
+        />
       </section>
-      
+
       <!--経歴 -->
       <section>
-        <pageItemTitle :title="'経歴'" :subtitle="'carrer'" />
+        <pageItemTitle :title="productJson.career.title" :subtitle="productJson.career.subtitle" />
+        <careerCard :list="productJson.career.list"/>
       </section>
     </div>
   </section>
 </template>
+
+<style scoped>
+  section{
+    margin-bottom:5vh;
+  }
+</style>
 
 <script>
 import pageTitle from "~/components/pagetitle";
@@ -70,6 +86,9 @@ import pageItemTitle from "~/components/pageitemtitle";
 import introduceCard from "~/components/about/introducecard";
 import introduceDetail from "~/components/about/introducedetail";
 import hobbyCard from "~/components/about/hobbycard";
+import labCard from "~/components/about/labcard";
+import careerCard from "~/components/about/careercard";
+
 export default {
   asyncData({ store }) {
     return {
@@ -81,7 +100,9 @@ export default {
     pageItemTitle,
     introduceCard,
     introduceDetail,
-    hobbyCard
+    hobbyCard,
+    labCard,
+    careerCard
   }
 };
 </script>

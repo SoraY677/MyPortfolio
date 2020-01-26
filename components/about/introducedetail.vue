@@ -2,13 +2,17 @@
   <section class="introduce-detail">
       <h3>{{title}}</h3>
       <p v-for="value in content" :key="value.id">{{value}}</p>
-      <a v-for="(value,key) in link" :key="value.key" :href="value">{{key}}</a>
+      <alink v-for="(value,key) in link" :key="value.id" :linkname="key" :linkpath="value" />
   </section>
 </template>
 
 <script>
+import alink from "~/components/link"
 export default {
-    props:['title','content','link']
+    props:['title','content','link'],
+    components:{
+        alink
+    }
 }
 </script>
 
@@ -16,14 +20,15 @@ export default {
     .introduce-detail{
         padding:3%;
         border-radius: 5px;
-        background-color: #c9c5c5;
+        border:1px solid #778899;
     }
 
-    .three-equally{
-        width:30%;
+    .introduce-detail > h3{
+        text-align: center;
+        margin-bottom:.5em;
     }
 
-    .two-equally{
-        width:45%;
+    a{
+        bottom:5%;
     }
 </style>

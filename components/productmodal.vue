@@ -3,7 +3,9 @@
     <section class="modal-window">
       <div class="modal-header">
         <h3>{{ name }}</h3>
+        <div class="button-wrapper">
         <button v-on:click="requestCloseModal"></button>
+        </div>
         <p class="skill-dev-period">{{'期間：'+dev}}</p>
         <div class="skill-list-area">
           <span>技術：</span>
@@ -23,7 +25,9 @@
       </div>
 
       <p v-for="descline in description" :key="descline.id">{{ descline }}</p>
-      
+      <div class="link">
+      <alink v-for="(value,key) in link" :key="value.id" :linkname="key" :linkpath="value" />
+      </div>   
     </section>
   </div>
 </template>
@@ -46,8 +50,7 @@
 .modal-window {
   position: fixed;
   overflow-y: auto;
-  top:0;
-  margin:5% auto;
+  top:5%;
   animation: test 0.3s linear 0s 1 alternate;
   z-index: 100;
   background-color: #ffffff;
@@ -58,6 +61,7 @@
 }
 
 .modal-header {
+  position: relative;
   overflow: hidden;
   margin-bottom: 1em;
 }
@@ -87,12 +91,12 @@
 
 .thumbnail {
   justify-content: center;
-  height: 100vh;
+  max-height: 100vh;
   overflow: hidden;
 }
 
 .thumbnail > img {
-  height:100%;
+  width:100%;
   border: 1px solid #2e2e2e;
 }
 
@@ -100,8 +104,15 @@
   float: left;
 }
 
+.modal-window .button-wrapper{
+  position: absolute;
+  display:flex;
+  justify-content: flex-end;
+  width:100%;
+}
+
 .modal-window button {
-  position: relative;
+  position: fixed;
   width: 5vh;
   height: 5vh;
   border-radius: 50%;
@@ -134,6 +145,7 @@
 .modal-window button::after {
   transform: translateY(-50%) rotate(-45deg);
 }
+
 @keyframes test {
   0% {
     opacity: 0;
@@ -145,11 +157,20 @@
     width: 74%;
   }
 }
+
+.link{
+  float:right;
+}
+
 </style>
 
 <script>
+import alink from "~/components/link"
 export default {
   props: ["name", "dev" ,"skill", "description", "link"],
+  components:{
+    alink
+  },
   methods: {
     requestCloseModal: function() {
       this.$emit("closeModalRequest");

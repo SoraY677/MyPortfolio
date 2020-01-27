@@ -54,7 +54,7 @@
   animation: test 0.3s linear 0s 1 alternate;
   z-index: 100;
   background-color: #ffffff;
-  width: 74%;
+  width: 94%;
   height:90%;
   border-radius: 20px;
   padding: 3%;

@@ -5,8 +5,8 @@
       <th>内容</th>
     </tr>
     <tr v-for="line in list" :key="line.id">
-      <td>{{ line[0] }}</td>
-      <td>{{ line[1] }}</td>
+      <td class="time">{{ line[0] }}</td>
+      <td class="content">{{ line[1] }}</td>
     </tr>
   </table>
 </template>
@@ -24,6 +24,9 @@ th{
 td {
   padding: 1.2em;
   border-bottom: 1px solid #778899;
+}
+td.time{
+  width: 6em;
 }
 </style>
 

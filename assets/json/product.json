@@ -6,7 +6,7 @@
         "description":
         [
         "私が所属している「横浜分室」のホームページです。",
-        "他団体をまとめているため、分室の情報についてわかりやすく発信する必要があるので、UIを改善するためにシンプルで操作性の良いように回収しました。"
+        "他団体をまとめているため、分室の情報についてわかりやすく発信する必要があるので、UIを改善するためにシンプルで操作性の良いように改修しました。"
         ],
         "link":{
             "HP":"https://www.comm.tcu.ac.jp/bunsitu/"
@@ -33,7 +33,7 @@
         "description":[
         ],
         "link":{
-            "Site":"https://soray677-portfolio.netlify.com/"
+            "Site":"http://www.comm.tcu.ac.jp/bunsitu/FCQuestionnaire/"
         }
     }
 

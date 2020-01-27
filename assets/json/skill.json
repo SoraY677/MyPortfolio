@@ -57,9 +57,9 @@
         "title":"資格",
         "subtitle":"License",
         "cardList":[
-            {"name":"ITパスポート","level":0,"experience":"2017"},
-            {"name":"基本情報技術者","level":0,"experience":"2017"},
-            {"name":"応用情報技術者","level":0,"experience":"2017"}
+            {"name":"ITパスポート","level":0,"experience":"2016.7"},
+            {"name":"基本情報技術者","level":0,"experience":"2017.11"},
+            {"name":"応用情報技術者","level":0,"experience":"2019.6"}
         ]
     }
 

@@ -36,7 +36,7 @@ img{
   width:100%;
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 740px){
   .top-message{
     top :50%;
     left:50%;

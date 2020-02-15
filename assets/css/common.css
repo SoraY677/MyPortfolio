@@ -11,12 +11,35 @@
   justify-content: space-around;
 }
 
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .two-equally{
   width:48%;
 }
 
 .three-equally{
   width:33%;
+}
+
+.square-frame{
+  position: relative;
+  width:100%;
+  padding-bottom:100%;
+}
+
+.square-frame > .content{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height:100%;
+  text-align: center;
 }
 
 section.container{

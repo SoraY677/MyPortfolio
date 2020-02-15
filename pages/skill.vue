@@ -64,7 +64,7 @@ export default {
   },
   asyncData({ store }) {
     return {
-      skillJson: store.getters["getSkillJson"]
+      skillJson: require(`~/assets/json/skill.json`)
     };
   }
 };

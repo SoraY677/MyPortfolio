@@ -27,7 +27,7 @@ import productCard from "~/components/productcard"
 export default {
   asyncData({store}){
     return{
-      productJson: store.getters['getProductJson']
+      productJson: require(`~/assets/json/product.json`)
     }
   },
   components: {

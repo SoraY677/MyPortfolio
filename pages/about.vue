@@ -92,7 +92,7 @@ import careerCard from "~/components/about/careercard";
 export default {
   asyncData({ store }) {
     return {
-      productJson: store.getters["getAboutJson"]
+      productJson : require(`~/assets/json/about.json`)
     };
   },
   components: {

@@ -1,0 +1,16 @@
+{
+  "messageCircle":[
+    {
+      "name":"hoge",
+      "imgUrl":""
+    },
+    {
+      "name":"fuga",
+      "imgUrl":""
+    },
+    { 
+      "name":"fuga",
+      "imgUrl":""
+    }
+  ]
+}

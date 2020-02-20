@@ -1,5 +1,6 @@
 <template>
   <div class="top flex-center">
+    <div class="bg-block" ref="isPhysicsballArea"></div>
     <div class="top-message">
       <div class="square-frame">
         <div class="content big-circle flex-center" ref="topCircle">
@@ -8,34 +9,17 @@
             <span>Sora</span>
           </p>
         </div>
-        <div class="content">
-          <ul class="intro-circle">
-            <li
-              v-for="(circleItem, circleIndex) in topJson.messageCircle"
-              ref="messageItem"
-              :key="circleIndex"
-            >
-              <div class="square-frame">
-                <div class="content small-circle flex-center">
-                  {{ circleItem.name }}
-                </div>
-              </div>
-            </li>
-            <li ref="messageItem0">
-              <div class="square-frame">
-                <div class="content small-circle flex-center">
-                   circleItem.name 
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.bg-block {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 .top {
   position: relative;
   height: 90vh;
@@ -91,46 +75,105 @@ ul > li {
 
 <script>
 export default {
-  asyncData({ store }) {
-    return {
-      topJson: require(`~/assets/json/top.json`)
-    };
-  },
-  methods: {
-    spredCircle: function(itemi, movex, movey) {
-      this.$refs.messageItem[itemi].style.transform =
-        "translate(" + movex + "px, " + movey + "px)";
-    }
-  },
+  //middleware:"PhysicsBall",
   mounted: function() {
-    let temp = [];
-    const rad = 360 / 3;
-    for (let itemi = 0; itemi < 3; itemi++) {
-      //移動先の座標
-      let movex =
-        (this.$refs.topCircle.clientWidth / 2) *
-          Math.cos((rad * Math.PI * itemi) / 180) +
-        (this.$refs.messageItem[itemi].clientWidth / 2) *
-          Math.cos((rad * Math.PI * itemi) / 180);
-      let movey =
-        (this.$refs.topCircle.clientHeight / 2) *
-          Math.sin((rad * Math.PI * itemi) / 180) +
-        (this.$refs.messageItem[itemi].clientHeight / 2) *
-          Math.sin((rad * Math.PI * itemi) / 180);
-      temp.push(
-        this.$refs.messageItem[itemi].animate(
-          [
-            { transform: "translate(0,0)" },
-            { transform: "translate(" + movex + "px," + movey + "px)" }
-          ],
-          2000
-        )
-      );
-      temp[itemi].addEventListener(
-        "finish",
-        this.spredCircle(itemi, movex, movey)
-      );
+    const Matter = require("matter-js");
+
+    const size = {
+      width:this.$refs.isPhysicsballArea.clientWidth,
+      height:this.$refs.isPhysicsballArea.clientHeight
     }
+    const Engine = Matter.Engine,
+      Render = Matter.Render,
+      Runner = Matter.Runner,
+      Composite = Matter.Composite,
+      Composites = Matter.Composites,
+      Common = Matter.Common,
+      MouseConstraint = Matter.MouseConstraint,
+      Mouse = Matter.Mouse,
+      World = Matter.World,
+      Bodies = Matter.Bodies;
+
+    let engine = Engine.create(),
+      world = engine.world;
+
+    // create renderer
+    var render = Render.create({
+      element: this.$refs.isPhysicsballArea,
+      engine: engine,
+      options: {
+        width: size.width,
+        height: size.height
+      }
+    });
+
+    Render.run(render);
+
+    // create runner
+    var runner = Runner.create();
+    Runner.run(runner, engine);
+
+    // add bodies
+    World.add(world, [
+      Bodies.rectangle(400, size.height, size.width, 10, { isStatic: true }),
+    ]);
+    console.log(size.width);
+
+    var stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
+      return Bodies.circle(x, y, Common.random(15, 30), {
+        restitution: 0.6,
+        friction: 0.1
+      });
+    });
+
+    World.add(world, [
+      stack
+    ]);
+
+    // add mouse control
+    var mouse = Mouse.create(render.canvas),
+      mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+          stiffness: 0.2,
+          render: {
+            visible: false
+          }
+        }
+      });
+
+    World.add(world, mouseConstraint);
+
+    // keep the mouse in sync with rendering
+    render.mouse = mouse;
+
+    // fit the render viewport to the scene
+    Render.lookAt(render, {
+      min: { x: 0, y: 0 },
+      max: { x: 800, y: 600 }
+    });
+
+    // wrapping using matter-wrap plugin
+    var allBodies = Composite.allBodies(world);
+
+    for (var i = 0; i < allBodies.length; i += 1) {
+      allBodies[i].plugin.wrap = {
+        min: { x: render.bounds.min.x - 100, y: render.bounds.min.y },
+        max: { x: render.bounds.max.x + 100, y: render.bounds.max.y }
+      };
+    }
+
+    // context for MatterTools.Demo
+    return {
+      engine: engine,
+      runner: runner,
+      render: render,
+      canvas: render.canvas,
+      stop: function() {
+        Matter.Render.stop(render);
+        Matter.Runner.stop(runner);
+      }
+    };
   }
 };
 </script>

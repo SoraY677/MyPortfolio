@@ -13,7 +13,6 @@
           />
         </li>
       </ul>
-      
     </section>
   </section>
 </template>
@@ -35,20 +34,20 @@ li {
 }
 
 @media screen and (max-width: 640px) {
-  li{
-    width:33%;
+  li {
+    width: 33%;
   }
 }
 
 @media screen and (max-width: 490px) {
-li{
-    width:50%;
+  li {
+    width: 50%;
   }
 }
 
-@media screen and (max-width: 280px){
-  li{
-    width:100%;
+@media screen and (max-width: 280px) {
+  li {
+    width: 100%;
   }
 }
 </style>
@@ -62,10 +61,11 @@ export default {
     pageItemTitle,
     skillCard
   },
-  asyncData({ store }) {
-    return {
-      skillJson: require(`~/assets/json/skill.json`)
-    };
+  data() {
+    return { skillJson };
+  },
+  created: function() {
+    this.skillJson = require(`~/assets/json/skill.json`);
   }
 };
 </script>

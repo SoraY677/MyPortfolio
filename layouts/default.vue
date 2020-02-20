@@ -1,78 +1,59 @@
 <template>
   <div>
-    <myheader />
-    <mycontent/>
+    <top />
+    <myheader/>
+    <ul>
+    <li><about/></li>
+    <li><skill/></li>
+    <li><product /></li>
+    </ul>
   </div>
 </template>
 
-<style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-body {
-  position: absolute;
-  width:100%;
-  min-height:100vh;
-  margin:0;
-  left: 0;
-  top: 0;
-  color:#2e2e2e;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  word-break: break-all;
-  padding:0;
-  margin: 0;
-}
+<style scoped>
 
 li{
-  list-style: none;
+  padding-top:10%;
 }
 
-section{
-  overflow: hidden;
+li:nth-child(2n+1){
+  background-color:#fff;
 }
 
-
-/* スクロールバーのカスタマイズ */
-::-webkit-scrollbar{
-  width: 10px;
-}
-::-webkit-scrollbar-track{
-  background: #fff;
-  border: none;
-  border-radius: 10px;
-  box-shadow: inset 0 0 2px #777; 
-}
-::-webkit-scrollbar-thumb{
-  background: #ccc;
-  border-radius: 10px;
-  box-shadow: none;
+li:nth-child(2n){
+  background-color:#eff3ff;
 }
 </style>
 
 <script>
 
 import myheader from "~/layouts/header"
-import mycontent from "~/layouts/content"
+import top from "~/pages/top";
+import about from "~/pages/about";
+import skill from "~/pages/skill";
+import product from "~/pages/product";
 
 export default {
   props:[""],
+  data(){
+    return{
+      scrollY:0
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      this.scrollY = window.scrollY;
+    }
+  },
   components:{
     myheader,
-    mycontent
+    top,
+    about,
+    skill,
+    product
   }
 }
 </script>

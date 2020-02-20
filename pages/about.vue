@@ -5,24 +5,24 @@
       <section>
         <!-- 自己紹介セクション -->
         <pageItemTitle
-          :title="productJson.introduce.title"
-          :subtitle="productJson.introduce.subtitle"
+          :title="aboutJson.introduce.title"
+          :subtitle="aboutJson.introduce.subtitle"
         />
         <introduceCard
-          :name="productJson.introduce.name"
-          :content="productJson.introduce.content"
-          :link="productJson.introduce.link"
+          :name="aboutJson.introduce.name"
+          :content="aboutJson.introduce.content"
+          :link="aboutJson.introduce.link"
         />
       </section>
       <!-- 趣味エリア -->
       <section>
         <pageItemTitle
-          :title="productJson.hobby.title"
-          :subtitle="productJson.hobby.subtitle"
+          :title="aboutJson.hobby.title"
+          :subtitle="aboutJson.hobby.subtitle"
         />
         <div class="flex-box">
           <hobbyCard
-            v-for="(value, index) in productJson.hobby.category"
+            v-for="(value, index) in aboutJson.hobby.category"
             :key="value.id"
             :index="index"
             :name="value"
@@ -31,15 +31,15 @@
       </section>
 
       <!-- 所属団体エリア -->
-      <section class="introduce">
+      <section>
         <pageItemTitle
-          :title="productJson.affiliation.title"
-          :subtitle="productJson.affiliation.subtitle"
+          :title="aboutJson.affiliation.title"
+          :subtitle="aboutJson.affiliation.subtitle"
         />
         <div class="flex-box">
           <introduceDetail
             class="three-equally"
-            v-for="org in productJson.affiliation.orglist"
+            v-for="org in aboutJson.affiliation.orglist"
             :key="org.id"
             :title="org.name"
             :content="org.content"
@@ -51,33 +51,35 @@
       <!-- 研究室 -->
       <section>
         <pageItemTitle
-          :title="productJson.lab.title"
-          :subtitle="productJson.lab.subtitle"
+          :title="aboutJson.lab.title"
+          :subtitle="aboutJson.lab.subtitle"
         />
         <labCard
-          :labname="productJson.lab.labname"
-          :teacher="productJson.lab.teacher"
-          :labthema="productJson.lab.labthema"
-          :mythema="productJson.lab.mythema"
-          :content="productJson.lab.content"
-          :link="productJson.lab.link"
-
+          :labname="aboutJson.lab.labname"
+          :teacher="aboutJson.lab.teacher"
+          :labthema="aboutJson.lab.labthema"
+          :mythema="aboutJson.lab.mythema"
+          :content="aboutJson.lab.content"
+          :link="aboutJson.lab.link"
         />
       </section>
 
       <!--経歴 -->
       <section>
-        <pageItemTitle :title="productJson.career.title" :subtitle="productJson.career.subtitle" />
-        <careerCard :list="productJson.career.list"/>
+        <pageItemTitle
+          :title="aboutJson.career.title"
+          :subtitle="aboutJson.career.subtitle"
+        />
+        <careerCard :list="aboutJson.career.list" />
       </section>
     </div>
   </section>
 </template>
 
 <style scoped>
-  section{
-    margin-bottom:5vh;
-  }
+section {
+  margin-bottom: 5vh;
+}
 </style>
 
 <script>
@@ -90,10 +92,13 @@ import labCard from "~/components/about/labcard";
 import careerCard from "~/components/about/careercard";
 
 export default {
-  asyncData({ store }) {
+  data() {
     return {
-      productJson : require(`~/assets/json/about.json`)
+      aboutJson
     };
+  },
+  created() {
+    this.aboutJson = require(`~/assets/json/about.json`)
   },
   components: {
     pageTitle,

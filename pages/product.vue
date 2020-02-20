@@ -25,10 +25,13 @@
 import pageTitle from "~/components/pagetitle";
 import productCard from "~/components/productcard"
 export default {
-  asyncData({store}){
+  data(){
     return{
-      productJson: require(`~/assets/json/product.json`)
+      productJson
     }
+  },
+  created(){
+    this.productJson = require(`~/assets/json/product.json`)
   },
   components: {
     pageTitle,

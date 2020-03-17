@@ -3,6 +3,10 @@ module.exports = {
   'nuxt-fontawesome'
   ],
   mode: 'spa',
+  //plugins
+  plugins: [
+    '~/plugins/scroll.js'
+  ],
   /*
   ** Headers of the page
   */
@@ -44,15 +48,6 @@ module.exports = {
   */
   css: [
     '~/assets/css/common.css'
-    ],
-    fontawesome: {
-      imports: [
-        {
-          set: '@fortawesome/free-solid-svg-icons',
-          icons: ['fas']
-        }
-      ]
-    }
-  
+    ]
 }
 

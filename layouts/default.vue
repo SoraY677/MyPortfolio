@@ -3,9 +3,10 @@
     <top />
     <myheader/>
     <ul>
-    <li><about/></li>
+    <li ><about/></li>
     <li><skill/></li>
     <li><product /></li>
+    <li><contact /></li>
     </ul>
   </div>
 </template>
@@ -28,32 +29,20 @@ li:nth-child(2n){
 <script>
 
 import myheader from "~/layouts/header"
-import top from "~/pages/top";
-import about from "~/pages/about";
-import skill from "~/pages/skill";
-import product from "~/pages/product";
-
+import top from "~/pages/top"
+import about from "~/pages/about"
+import skill from "~/pages/skill"
+import product from "~/pages/product"
+import contact from "~/pages/contact"
 export default {
   props:[""],
-  data(){
-    return{
-      scrollY:0
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll() {
-      this.scrollY = window.scrollY;
-    }
-  },
   components:{
     myheader,
     top,
     about,
     skill,
-    product
+    product,
+    contact
   }
 }
 </script>

@@ -4,7 +4,7 @@
     <section class="skill-category" v-for="item in skillJson" :key="item.id">
       <pageItemTitle :title="item.title" :subtitle="item.subtitle" />
       <ul>
-        <li v-for="skillcard in item.cardList" :key="skillcard.id">
+        <li v-for="skillcard in item.cardList" :key="skillcard.id" v-scroll="0.3">
           <skillCard
             :category="item.title"
             :name="skillcard.name"

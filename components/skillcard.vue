@@ -3,7 +3,7 @@
     <div class="skill-icon" v-if="category!='資格'">
       <img :src="'/img/skill/' + name + '.svg'" />
     </div>
-    <div class="skill-detail">
+    <div class="skill-detail flex-center">
       <h3>{{ name }}</h3>
       <span class="level-number" :class="colorLevel(level)">
         {{ "Level." + level }}
@@ -16,16 +16,19 @@
 <style scoped>
 .skill-card {
   display: flex;
-  width: 100%;
-  margin-bottom: 20%;
+  width: 95%;
+  margin: 0 auto 20%;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-color:#fdfdfd;
+  border-radius: 10px;
+  box-shadow: 3px 3px 1px 3px #2e2e2e; 
 }
 
 .skill-icon {
   display: flex;
-  width:15vh;
-  height:15vh;
+  width:6vh;
+  height:6vh;
   justify-content: center;
   align-items: center;
 }
@@ -35,8 +38,13 @@
 }
 
 .skill-detail {
+  float:left;
   text-align: center;
-  width: 100%;
+  
+}
+
+.skill-detail > *{
+  width:100%;
 }
 
 .skill-detail h3{

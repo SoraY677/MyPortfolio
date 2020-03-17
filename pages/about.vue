@@ -7,11 +7,13 @@
         <pageItemTitle
           :title="aboutJson.introduce.title"
           :subtitle="aboutJson.introduce.subtitle"
+          v-scroll
         />
         <introduceCard
           :name="aboutJson.introduce.name"
           :content="aboutJson.introduce.content"
           :link="aboutJson.introduce.link"
+          v-scroll ="0.2"
         />
       </section>
       <!-- 趣味エリア -->
@@ -19,6 +21,7 @@
         <pageItemTitle
           :title="aboutJson.hobby.title"
           :subtitle="aboutJson.hobby.subtitle"
+          v-scroll ="0.2"
         />
         <div class="flex-box">
           <hobbyCard
@@ -26,6 +29,7 @@
             :key="value.id"
             :index="index"
             :name="value"
+            v-scroll ="0.3*index"
           />
         </div>
       </section>
@@ -44,6 +48,7 @@
             :title="org.name"
             :content="org.content"
             :link="org.link"
+            v-scroll ="0.3"
           />
         </div>
       </section>
@@ -61,6 +66,7 @@
           :mythema="aboutJson.lab.mythema"
           :content="aboutJson.lab.content"
           :link="aboutJson.lab.link"
+          v-scroll
         />
       </section>
 
@@ -70,7 +76,7 @@
           :title="aboutJson.career.title"
           :subtitle="aboutJson.career.subtitle"
         />
-        <careerCard :list="aboutJson.career.list" />
+        <careerCard :list="aboutJson.career.list" v-scroll />
       </section>
     </div>
   </section>
@@ -98,7 +104,7 @@ export default {
     };
   },
   created() {
-    this.aboutJson = require(`~/assets/json/about.json`)
+    this.aboutJson = require(`~/assets/json/about.json`);
   },
   components: {
     pageTitle,

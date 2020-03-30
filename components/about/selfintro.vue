@@ -61,7 +61,7 @@ img.intro-icon {
   height: 90%;
   width: 100%;
   border-radius: 20px;
-  background-color: #fff;
+  background-color: #f5f5f5;
   padding: 1rem;
 }
 
@@ -73,7 +73,7 @@ img.intro-icon {
   left: 0;
   width: 3vw;
   height: 3vw;
-  background-color: #fff;
+  background-color: #f5f5f5;
   transform: translate(-50%, -50%) rotate(45deg);
 }
 

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <main>
     <top class="section-pattern" />
     <about class="section-pattern" />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -18,6 +18,11 @@ export default {
 </script>
 
 <style>
+main{
+  padding-top:50px;
+  background-color: #f5f5f5;
+}
+
 .section-pattern {
   position:relative;
   padding:15vw 10% 10% 10%;
@@ -41,7 +46,7 @@ export default {
 
 .section-pattern:nth-child(2n + 1),
 .section-pattern:nth-child(2n + 1):before{
-  background-color: #fff;
+  background-color: #f5f5f5;
 }
 
 .section-pattern:nth-child(2n),

@@ -1,13 +1,4 @@
-/*レイアウト*/
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  word-break: break-all;
-  padding:0;
-  margin: 0;
-}
 
 /* スクロールバーのカスタマイズ */
 ::-webkit-scrollbar{
@@ -36,23 +27,7 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  position: absolute;
-  width:100%;
-  min-height:100vh;
-  margin:0;
-  left: 0;
-  top: 0;
-  color:#2e2e2e;
-}
 
-li{
-  list-style: none;
-}
-
-section{
-  overflow: hidden;
-}
 
 
 .inner{

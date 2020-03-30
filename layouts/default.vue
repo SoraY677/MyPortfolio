@@ -1,10 +1,15 @@
 <template>
-  <div></div>
+  <div>
+    <exlink />
+  </div>
 </template>
 
 <script>
+import exlink from "~/components/exlink"
 export default {
-
+  components:{
+    exlink
+  }
 }
 </script>
 

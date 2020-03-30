@@ -47,7 +47,8 @@ module.exports = {
   共通のcss定義
   */
   css: [
-    '~/assets/css/common.css'
+    '@/assets/css/common.css',
+    '@/assets/css/reset.css'
     ]
 }
 

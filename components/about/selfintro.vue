@@ -2,14 +2,18 @@
   <div class="self-intro">
     <div class="icon-frame square">
       <div>
-        <img class="intro-icon" />
+        <img :src="imgpath" class="intro-icon" />
       </div>
     </div>
     <div class="description-container">
       <div class="description">
-        <p class="title">{{name}}</p>
-        <p class="titlesub">{{nameSub}}</p>
-        <p class="subscription">{{description}}</p>
+        <h2>
+          <p class="title">{{ name }}</p>
+          <p class="titlesub">{{ nameSub }}</p>
+        </h2>
+        <div class="detail">
+          <p>{{ description }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -17,11 +21,11 @@
 
 <script>
 export default {
-  props:{
-    imgpath:String,
-    name:String,
-    nameSub:String,
-    description:String
+  props: {
+    imgpath: String,
+    name: String,
+    nameSub: String,
+    description: String
   }
 };
 </script>
@@ -30,15 +34,14 @@ export default {
 .self-intro {
   display: flex;
   width: 100%;
-  margin-top:40px;
-
 }
-
 
 /* アイコン画像 */
 .self-intro > .icon-frame {
   width: 40%;
   margin: 1%;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 img.intro-icon {
@@ -48,45 +51,48 @@ img.intro-icon {
 
 /*説明文 */
 .self-intro > .description-container {
-  width: 100%;
-  padding:2% 5% 0  5%;
+  width: 60%;
+  padding: 2% 2% 0 2%;
 }
 
 .self-intro > .description-container > .description {
-  position:relative;
+  position: relative;
   z-index: 1;
   height: 90%;
-  width:100%;
+  width: 100%;
   border-radius: 20px;
   background-color: #fff;
-  padding:1rem;
+  padding: 1rem;
 }
 
-.self-intro > .description-container > .description::before{
-  content: '';
+.self-intro > .description-container > .description::before {
+  content: "";
   position: absolute;
   z-index: -1;
-  top:50%;
-  left:0;
-  width:3vw;
-  height:3vw;
-  background-color:#fff;
-  transform: translate(-50%,-50%) rotate(45deg);
-  
+  top: 50%;
+  left: 0;
+  width: 3vw;
+  height: 3vw;
+  background-color: #fff;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.self-intro > .description-container > .description > .title{
-  font-size:1.4em;
+.self-intro > .description-container > .description > h2 {
+  height:5rem;
 }
 
-.self-intro > .description-container > .description > .titlesub{
-  font-size:1.2em;
+.self-intro > .description-container > .description > h2 > .title {
+  font-size: 2rem;
 }
 
-.self-intro > .description-container > .description > .description{
-
+.self-intro > .description-container > .description > h2 > .titlesub {
+  font-size: 1.8rem;
+  border-bottom: 1px solid #2e2e2e;
 }
 
-
-
+.self-intro > .description-container > .description > .detail {
+  height:8rem;
+  margin-top: 0.9em;
+  overflow: auto;
+}
 </style>

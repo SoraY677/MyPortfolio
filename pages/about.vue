@@ -4,7 +4,7 @@
       :title="'Welcome to My Portfolio!'"
       :subtitle="'ようこそ！ぜひ見ていってください！'"
     />
-    <selfintro :imgpath="''" :name="'Sora YAMAGUCHI'" :nameSub="'山口 宙来'" :description="description"/>
+    <selfintro class="top-space" :imgpath="'/img/icon.png'" :name="'Sora YAMAGUCHI'" :nameSub="'山口 宙来'" :description="description"/>
   </section>
 </template>
 

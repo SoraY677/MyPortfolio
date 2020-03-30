@@ -1,18 +1,16 @@
 <template>
   <div>
-    <exlink />
+    <top />
   </div>
 </template>
 
 <script>
-import exlink from "~/components/exlink"
+import top from "~/pages/top"
 export default {
-  components:{
-    exlink
+  components: {
+    top
   }
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

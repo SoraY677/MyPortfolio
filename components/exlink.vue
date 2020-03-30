@@ -1,43 +1,46 @@
 <template>
-  <a class="ex-link">
-    <div class="icon-container">
-      <font-awesome-icon :icon="['fab', 'twitter']" />
+  <a class="ex-link" :href="linkPath" :style="{backgroundColor:basecolor}">
+    <div v-if="linkImgName!=''" class="img-link">
+      <div class="icon-container">
+        <font-awesome-icon :icon="['fab', 'twitter']" />
+      </div>
+      <span>
+        {{ linkName }}
+      </span>
     </div>
-    <p>
+    <div v-if="linkImgName===''" class="simple-link">
       {{linkName}}
-    </p>
+    </div>
   </a>
 </template>
 
 <script>
 export default {
-  props:{
-    linkImgName:"",
-    linkName:""
+  props: {
+    linkPath:String,
+    linkImgName: String,
+    basecolor: String,
+    linkName: String
   }
-}
+};
 </script>
 
 <style>
-a.ex-link{
-  
+a.ex-link {
+  border-radius: 4px;
+  padding:4px;
+  font-size:1.2rem;
+  color:#fff;
 }
 
-a.ex-link .icon-container{
-  width:25%;
-  padding-bottom:100%;
+a.ex-link .icon-container {
+  display: inline;
 }
 
-a.ex-link .icon-container > img.icon{
-  display:block;
-  width: 100%;
-  height:100%;
+a.ex-link .icon-container > img.icon {
+  display: block;
 }
 
-a.ex-link .icon-container > p{
-
+a.ex-link .icon-container > span {
 }
-
-
-
 </style>

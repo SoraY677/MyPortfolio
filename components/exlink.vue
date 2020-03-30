@@ -2,7 +2,7 @@
   <a class="ex-link" :href="linkPath" :style="{backgroundColor:basecolor}">
     <div v-if="linkImgName!=''" class="img-link">
       <div class="icon-container">
-        <font-awesome-icon :icon="['fab', 'twitter']" />
+        <font-awesome-icon :icon="['fab', linkImgName]" />
       </div>
       <span>
         {{ linkName }}
@@ -31,6 +31,12 @@ a.ex-link {
   padding:4px;
   font-size:1.2rem;
   color:#fff;
+  transition-duration: .3s;
+}
+
+a.ex-link:hover{
+  transform: scale(1.2);
+  box-shadow: 0 2px 3px 2px #ddd   ;
 }
 
 a.ex-link .icon-container {

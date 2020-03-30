@@ -1,6 +1,7 @@
 <template>
   <div>
-    <top />
+    <top class="section-pattern"/>
+    <section class=".section-pattern"></section>
   </div>
 </template>
 
@@ -13,4 +14,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+  .section-pattern:nth-child(2n){
+    background-color: #a1d8e2;
+  }
+</style>

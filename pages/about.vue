@@ -1,15 +1,21 @@
 <template>
   <section>
-    hogehoge
+    <firstTitle
+      class="center-title"
+      :title="'Welcome to My Portfolio!'"
+      :subtitle="'ようこそ！ぜひ見ていってください！'"
+    />
   </section>
 </template>
 
 <script>
-export default {
+import firstTitle from "~/components/firstTitle";
 
-}
+export default {
+  components: {
+    firstTitle
+  }
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

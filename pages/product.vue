@@ -14,14 +14,11 @@ export default {
     firstTitle,
     productList
   },
-  data() {
-    return {
-      productJson:{}
-    };
+  data(){
+    return{
+      productJson:this.$store.getters['jsonstore/product']
+    }
   },
-  created() {
-    this.productJson = require(`~/assets/json/product.json`);
-  }
 }
 </script>
 

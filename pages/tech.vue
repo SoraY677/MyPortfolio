@@ -1,7 +1,6 @@
 <template>
   <section>
     <firstTitle title="My Tech" subtitle="身に着けた技術" />
-
     <section class="tech-list top-middle-space">
      <secondTitle title="Language" subtitle="言語"/>
       <ul>
@@ -87,19 +86,17 @@ import firstTitle from "~/components/firstTitle";
 import secondTitle from "~/components/secondTitle";
 import techcard from "~/components/techcard";
 
+
 export default {
+  data(){
+    return{
+      skillJson:this.$store.getters['jsonstore/skill']
+    }
+  },
   components: {
     firstTitle,
     secondTitle,
     techcard
-  },
-  data() {
-    return {
-      skillJson: {}
-    };
-  },
-  created() {
-    this.skillJson = require(`~/assets/json/skill.json`);
   }
 };
 </script>
@@ -128,9 +125,9 @@ export default {
   }
 }
 
-@media screen and (max-width: 530px){
+@media screen and (max-width: 530px) {
   .tech-list > ul > li {
-    min-width:160px;
+    min-width: 160px;
   }
 }
 </style>

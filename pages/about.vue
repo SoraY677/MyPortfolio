@@ -10,7 +10,7 @@
     <section class="org-area top-middle-space">
       <secondTitle :title="'Orgnization'" :subtitle="'私の所属する組織'" />
       <ul class="top-small-space">
-        <li><clubintro :name="'横浜分室'" :description="'hoge'" :imgpath="'https://pbs.twimg.com/profile_images/1272197668/stoyc_400x400.jpg'" :link="link"/></li>
+        <li><clubintro :name="'横浜分室'" :description="'hogeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'" :imgpath="'https://pbs.twimg.com/profile_images/1272197668/stoyc_400x400.jpg'" :link="link"/></li>
         <li><clubintro :name="'デジタルコンテンツ研究会'" :description="'hoge'" :imgpath="'https://pbs.twimg.com/profile_images/378800000068421807/cdc807adc80db6980632a40ab41090f2_400x400.png'"/></li>
         <li><clubintro :name="'学科学生会'" :description="'hoge'" :imgpath="'https://pbs.twimg.com/profile_images/875409727118647296/OcDjNVIo_400x400.jpg'"/></li>
       </ul>
@@ -53,6 +53,7 @@ section.org-area > ul{
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
+  align-items: baseline;
 }
 
 section.org-area > ul > li{

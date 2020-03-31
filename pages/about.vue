@@ -46,7 +46,6 @@ export default {
 <style>
 
 .selfintro-frame{
-  padding:0 18%;
   width:100%;
 }
 
@@ -64,7 +63,12 @@ section.org-area > ul > li{
   section.org-area > ul > li{
     width:100%;
     padding:1% 20%;
-  }  
+  }
+
+  .selfintro-frame{
+  padding:0 10%;
+  width:100%;
+}  
 }
 
   </style>

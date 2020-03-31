@@ -79,11 +79,11 @@ img.intro-icon {
 }
 
 .self-intro > .description-container > .description > h2 > .title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .self-intro > .description-container > .description > h2 > .titlesub {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   border-bottom: 1px solid #2e2e2e;
 }
 
@@ -99,14 +99,13 @@ img.intro-icon {
     width: 100%;
   }
   .self-intro > .icon-frame {
-    width:40%;
+    width: 60%;
     margin:0 auto;
   }
 
   .self-intro > .description-container {
-    width: 80%;
+    width: 100%;
     padding: 10% 2% 0 2%;
-    margin:0 auto;
   }
 
   .self-intro > .description-container > .description::before {

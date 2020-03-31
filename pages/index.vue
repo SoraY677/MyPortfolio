@@ -1,5 +1,6 @@
 <template>
-  <div>どうしてここにきてしまったんだい？</div>
+  <div>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <a class="ex-link" :href="linkPath" :style="{backgroundColor:basecolor}">
+  <a class="ex-link" target="_blank" :href="linkPath" :style="{backgroundColor:basecolor}">
     <div v-if="linkImgName!=''" class="img-link">
       <div class="icon-container">
         <font-awesome-icon :icon="['fab', linkImgName]" />

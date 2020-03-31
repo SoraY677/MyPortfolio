@@ -26,6 +26,7 @@ h2.second-title {
   position: relative;
   z-index: 0;
   width:fit-content;
+  margin:0 auto;
   padding:0.5rem 2rem;
   text-align: center;
   

@@ -2,50 +2,53 @@
   <main>
     <top class="section-pattern" />
     <about class="section-pattern" />
+    <tech class="section-pattern" />
   </main>
 </template>
 
 <script>
 import top from "~/pages/top";
 import about from "~/pages/about";
+import tech from "~/pages/tech";
 
 export default {
   components: {
     top,
-    about
+    about,
+    tech
   }
 };
 </script>
 
 <style>
-main{
-  padding-top:50px;
+main {
+  padding-top: 50px;
   background-color: #f5f5f5;
 }
 
 .section-pattern {
-  position:relative;
-  padding:15vw 10% 10% 10%;
+  position: relative;
+  padding: 15vw 10% 10% 10%;
 }
 
-.section-pattern:first-child{
-  padding-top:0;
+.section-pattern:first-child {
+  padding-top: 0;
 }
 
-.section-pattern:before{
-  content:"";
-  position:absolute;
+.section-pattern:before {
+  content: "";
+  position: absolute;
   display: block;
   z-index: 1;
-  top:100%;
-  left:50%;
-  width:8vw;
-  height:8vw;
-  transform: translate(-50%,-50%) rotate(45deg);
+  top: 100%;
+  left: 50%;
+  width: 8vw;
+  height: 8vw;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .section-pattern:nth-child(2n + 1),
-.section-pattern:nth-child(2n + 1):before{
+.section-pattern:nth-child(2n + 1):before {
   background-color: #f5f5f5;
 }
 
@@ -55,16 +58,16 @@ main{
 }
 
 /* スクロールバーのカスタマイズ */
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 10px;
 }
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background: #fff;
   border: none;
   border-radius: 10px;
-  box-shadow: inset 0 0 2px #777; 
+  box-shadow: inset 0 0 2px #777;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 10px;
   box-shadow: none;

@@ -1,6 +1,15 @@
-.top-space{
+.top-big-space{
+  margin-top:90px;
+}
+
+.top-middle-space{
   margin-top:60px;
 }
+
+.top-small-space{
+  margin-top:30px;
+}
+
 
 /* 正方形*/
 .square{

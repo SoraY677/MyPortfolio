@@ -1,13 +1,17 @@
 <template>
   <div class="tech-card">
-    <div class="img-container square">
+    <div v-if="techJson.imgpath != ''" class="img-container square">
       <div>
-        <img :src="'/img/skill/' + techJson.name + '.svg'" />
+        <img :src="'/img/skill/' + techJson.imgpath" />
       </div>
     </div>
     <div class="description">
       <span class="title">{{ techJson.name }}</span>
-      <div class="level" :class="'levelcolor' + techJson.level"></div>
+      <div
+        v-if="techJson != 0"
+        class="level"
+        :class="'levelcolor' + techJson.level"
+      ></div>
       <span class="exp">{{ techJson.experience }}</span>
     </div>
   </div>
@@ -31,30 +35,35 @@ export default {
   border-radius: 12px;
 }
 
-.img-container {
+.tech-card > .img-container {
   width: 24%;
   margin: 5%;
   overflow: hidden;
   border-radius: 4px;
 }
 
-.img-container img {
+.tech-card > .img-container img {
   width: 100%;
   height: 100%;
 }
 .tech-card > .description {
   display: inline-block;
+  padding:2%;
   width: 70%;
 }
 
 .tech-card > .description > .title {
-  font-size: calc(8px + ((1em - 10px) * 0.7143));
+  font-size: calc(10px + ((1em - 10px) * 0.7143));
 }
 
 .tech-card > .description > .level {
   width: 60%;
   height: 4px;
-  border-radius:2px;
+  border-radius: 2px;
+}
+
+.tech-card > .description > .exp{
+  font-size: calc(8px + ((1em - 10px) * 0.7143));
 }
 
 .levelcolor1 {
@@ -75,5 +84,30 @@ export default {
 
 .levelcolor5 {
   background-color: #f33;
+}
+
+@media screen and (max-width: 640px){
+  .tech-card > .img-container {
+  width: 20%;
+  margin: 2%;
+  overflow: hidden;
+  border-radius: 4px;
+  }
+
+  .tech-card > .description {
+  display: inline-block;
+  padding:2%;
+  width: 76%;
+}
+}
+
+@media screen and (max-width: 480px){
+.tech-card > .description > .title {
+  font-size: 12px;
+}
+
+.tech-card > .description > .exp {
+  font-size: 10px;
+}
 }
 </style>

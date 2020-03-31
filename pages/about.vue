@@ -4,7 +4,7 @@
       :title="'Welcome to My Portfolio!'"
       :subtitle="'ようこそ！ぜひ見ていってください！'"
     />
-    <selfintro class="top-middle-space" :imgpath="'/img/icon.png'" :name="'Sora YAMAGUCHI'" :nameSub="'山口 宙来'" :description="description"/>
+    <selfintro class="selfintro-frame top-middle-space" :imgpath="'/img/icon.png'" :name="'Sora YAMAGUCHI'" :nameSub="'山口 宙来'" :description="description"/>
 
     <!-- 所属団体 -->
     <section class="org-area top-middle-space">
@@ -44,12 +44,27 @@ export default {
 </script>
 
 <style>
+
+.selfintro-frame{
+  padding:0 18%;
+  width:100%;
+}
+
 section.org-area > ul{
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
+  flex-wrap: wrap;
 }
 
 section.org-area > ul > li{
-  width:31%;
+  width:33%;
+  padding:1%;
 }
+@media screen and (max-width: 640px){
+  section.org-area > ul > li{
+    width:100%;
+    padding:1% 20%;
+  }  
+}
+
   </style>

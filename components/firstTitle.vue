@@ -37,4 +37,14 @@ h1.first-title > span{
   font-size:1.4rem;
 }
 
+@media screen and (max-width: 640px){
+  .first-title > .title{
+    font-size:1.5rem;
+  }
+
+  .first-title > .sub-title{
+    font-size:1.1rem;
+  }
+   
+}
 </style>

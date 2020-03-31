@@ -3,6 +3,10 @@
     <top class="section-pattern" />
     <about class="section-pattern" />
     <tech class="section-pattern" />
+    <product class="section-pattern" />
+    <footer>
+      © 2020 Sora Yamaguchi All Rights Reserved
+    </footer>
   </main>
 </template>
 
@@ -10,12 +14,14 @@
 import top from "~/pages/top";
 import about from "~/pages/about";
 import tech from "~/pages/tech";
+import product from "~/pages/product";
 
 export default {
   components: {
     top,
     about,
-    tech
+    tech,
+    product
   }
 };
 </script>
@@ -26,7 +32,7 @@ main {
   background-color: #f5f5f5;
 }
 
-.section-pattern {
+.section-pattern ,footer{
   position: relative;
   padding: 15vw 10% 10% 10%;
 }
@@ -57,19 +63,30 @@ main {
   background-color: #a1d8e2;
 }
 
-/* スクロールバーのカスタマイズ */
-::-webkit-scrollbar {
-  width: 10px;
+footer{
+  padding-bottom:2em;
+  font-size:1.4rem;
+  text-align: center;
 }
-::-webkit-scrollbar-track {
-  background: #fff;
-  border: none;
-  border-radius: 10px;
-  box-shadow: inset 0 0 2px #777;
+
+@media screen and (max-width: 640px){
+  .section-pattern{
+    padding-right:7%;
+    padding-left:7%;
+  }
+
+  footer{
+    font-size:0.9rem;
+  }
+  
 }
-::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
-  box-shadow: none;
+
+@media screen and (max-width: 480px){
+  .section-pattern{
+    padding-right:4%;
+    padding-left:4%;
+  }
 }
+
+
 </style>

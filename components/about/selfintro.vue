@@ -39,6 +39,7 @@ export default {
 /* アイコン画像 */
 .self-intro > .icon-frame {
   width: 40%;
+  height: 100%;
   margin: 1%;
   border-radius: 50%;
   overflow: hidden;
@@ -51,14 +52,14 @@ img.intro-icon {
 
 /*説明文 */
 .self-intro > .description-container {
-  width: 60%;
-  padding: 2% 2% 0 2%;
+  width: 58%;
+  padding: 2% 2% 0 4%;
 }
 
 .self-intro > .description-container > .description {
   position: relative;
   z-index: 1;
-  height: 90%;
+  height: 100%;
   width: 100%;
   border-radius: 20px;
   background-color: #f5f5f5;
@@ -77,22 +78,49 @@ img.intro-icon {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.self-intro > .description-container > .description > h2 {
-  height:5rem;
-}
-
 .self-intro > .description-container > .description > h2 > .title {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .self-intro > .description-container > .description > h2 > .titlesub {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   border-bottom: 1px solid #2e2e2e;
 }
 
 .self-intro > .description-container > .description > .detail {
-  height:8rem;
+  height: 8rem;
   margin-top: 0.9em;
   overflow: auto;
+}
+
+@media screen and (max-width: 640px) {
+  .self-intro {
+    display: block;
+    width: 100%;
+  }
+  .self-intro > .icon-frame {
+    width:40%;
+    margin:0 auto;
+  }
+
+  .self-intro > .description-container {
+    width: 80%;
+    padding: 10% 2% 0 2%;
+    margin:0 auto;
+  }
+
+  .self-intro > .description-container > .description::before {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+
+  .self-intro > .description-container > .description > h2 > .title{
+    font-size:1.4rem;
+  }
+  .self-intro > .description-container > .description > h2 > .titlesub{
+    font-size:1.0rem;
+  }
 }
 </style>

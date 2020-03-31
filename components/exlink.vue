@@ -47,6 +47,9 @@ a.ex-link .icon-container > img.icon {
   display: block;
 }
 
-a.ex-link .icon-container > span {
+@media screen and (max-width: 640px){
+  a.ex-link{
+    font-size:0.9rem;
+  }
 }
 </style>

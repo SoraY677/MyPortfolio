@@ -55,7 +55,7 @@ export default {
 section.top > .key-visual {
   width: fit-content;
   margin: 50px auto 0 auto;
-  padding: 7em 10em;
+  padding: 14% 20%;
   border: 4px solid #00608d;
   border-radius: 30px;
   text-align: center;
@@ -78,5 +78,18 @@ section.top > ul {
 
 section.top > ul li {
   padding: 0 10px;
+}
+
+@media screen and (max-width: 540px){
+  section.top > .key-visual{
+    padding: 12% 18%;
+  }
+  section.top > .key-visual > .title {
+  font-size: 2.0rem;
+}
+
+section.top > .key-visual > .sub-title {
+  font-size: 1.0em;
+}
 }
 </style>

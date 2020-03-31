@@ -7,8 +7,8 @@
     </div>
     <div class="description-container">
       <h2>{{name}}</h2>
-      <p>{{description}}</p>
-      <ul>
+      <!-- <p>{{description}}</p> -->
+      <!-- <ul>
       <li v-for="linkel in link" :key="linkel.id">
         <exlink
           :linkImgName="linkel.imgName"
@@ -17,7 +17,7 @@
           :linkPath="linkel.path"
         />
       </li>
-      </ul>
+      </ul> -->
     </div>
   </section>
 </template>
@@ -60,4 +60,14 @@ export default {
   padding:0 10%;
 }
 
+.club-intro-box > .description-container h2{
+  font-size:1.3vw;
+  text-align: center;
+}
+
+@media screen  and (max-width: 640px){
+  .club-intro-box > .description-container h2{
+    font-size:3vw;
+  }
+}
 </style>

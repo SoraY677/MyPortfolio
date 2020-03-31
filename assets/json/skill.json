@@ -1,66 +1,181 @@
 {
-    "Language":{
-        "title":"言語系",
-        "subtitle":"Language",
-        "cardList":[
-        {"name":"HTML5","level":5,"experience":"2016"},
-        {"name":"CSS3","level":5,"experience":"2016"},
-        {"name":"javascript","level":5,"experience":"2016"},
-        {"name":"C","level":3,"experience":"2013.5"},
-        {"name":"C++","level":4,"experience":"2017"},
-        {"name":"java","level":4,"experience":"2015"},
-        {"name":"Kotlin","level":4,"experience":"2019"},
-        {"name":"Python","level":3,"experience":"2019"},
-        {"name":"PHP","level":3,"experience":"2019"},
-        {"name":"nodejs","level":3,"experience":"2018"}
-        ]
-    },
-    "Framework":{
-        "title":"フレームワーク",
-        "subtitle":"framework",
-        "cardList":[
-        {"name":"JQuery","level":2,"experience":"2018"},
-        {"name":"Vue","level":4,"experience":"2019"},
-        {"name":"Nuxt","level":3,"experience":"2019"}
-        ]
-    },
-    "Tool":{
-        "title":"ツール",
-        "subtitle":"tool",
-        "cardList":[
-            {"name":"git","level":3,"experience":"2017"}
-        ]
-    },
-    "OS":{
-        "title":"OS",
-        "subtitle":"operating system",
-        "cardList":[
-            {"name":"windows","level":1,"experience":"2018"},
-            {"name":"Linux","level":1,"experience":"2018"}
-        ]
-    },
-    "Other":{
-        "title":"その他",
-        "subtitle":"other",
-        "cardList":[
-        {"name":"Azure","level":1,"experience":"2019"},
-        {"name":"Heroku","level":2,"experience":"2017"},
-        {"name":"Netlify","level":2,"experience":"2019"},
-        {"name":"github","level":5,"experience":"2017"},
-        {"name":"VisualStudio","level":3,"experience":"2013.5"},
-        {"name":"IntelliJ","level":3,"experience":"2018"},
-        {"name":"VisualStudioCode","level":4,"experience":"2018"},
-        {"name":"Android","level":2,"experience":"2018"}
-        ]
-    },
-    "Qualification":{
-        "title":"資格",
-        "subtitle":"License",
-        "cardList":[
-            {"name":"ITパスポート","level":0,"experience":"2016.7"},
-            {"name":"基本情報技術者","level":0,"experience":"2017.11"},
-            {"name":"応用情報技術者","level":0,"experience":"2019.6"}
-        ]
-    }
-
+    "Language": [
+        {
+            "name": "HTML5",
+            "imgpath":"HTML5.svg",
+            "level": 5,
+            "experience": "2016"
+        },
+        {
+            "name": "CSS3",
+            "imgpath":"CSS3.svg",
+            "level": 5,
+            "experience": "2016"
+        },
+        {
+            "name": "javascript",
+            "imgpath":"javascript.svg",
+            "level": 5,
+            "experience": "2016"
+        },
+        {
+            "name": "C",
+            "imgpath":"C.svg",
+            "level": 3,
+            "experience": "2013.5"
+        },
+        {
+            "name": "C++",
+            "imgpath":"C++.svg",
+            "level": 4,
+            "experience": "2017"
+        },
+        {
+            "name": "java",
+            "imgpath":"java.svg",
+            "level": 4,
+            "experience": "2015"
+        },
+        {
+            "name": "Kotlin",
+            "imgpath":"kotlin.svg",
+            "level": 4,
+            "experience": "2019"
+        },
+        {
+            "name": "Python",
+            "imgpath":"Python.svg",
+            "level": 3,
+            "experience": "2019"
+        },
+        {
+            "name": "PHP",
+            "imgpath":"PHP.svg",
+            "level": 3,
+            "experience": "2019"
+        },
+        {
+            "name": "nodejs",
+            "imgpath":"nodejs.svg",
+            "level": 3,
+            "experience": "2018"
+        }
+    ],
+    "Framework": [
+        {
+            "name": "JQuery",
+            "imgpath":"JQuery.svg",
+            "level": 2,
+            "experience": "2018"
+        },
+        {
+            "name": "Vue",
+            "imgpath":"Vue.svg",
+            "level": 4,
+            "experience": "2019"
+        },
+        {
+            "name": "Nuxt",
+            "imgpath":"Nuxt.svg",
+            "level": 3,
+            "experience": "2019"
+        },{
+            "name": "Spring",
+            "imgpath":"spring.svg",
+            "level": 2,
+            "experience": "2019"
+        }
+    ],
+    "Tool": [
+        {
+            "name": "git",
+            "imgpath":"git.svg",
+            "level": 3,
+            "experience": "2017"
+        }
+    ],
+    "OS": [
+        {
+            "name": "windows",
+            "imgpath":"windows.svg",
+            "level": 1,
+            "experience": "2018"
+        },
+        {
+            "name": "Linux",
+            "imgpath":"Linux.svg",
+            "level": 1,
+            "experience": "2018"
+        }
+    ],
+    "Other": [
+        {
+            "name": "Azure",
+            "imgpath":"Azure.svg",
+            "level": 1,
+            "experience": "2019"
+        },
+        {
+            "name": "Heroku",
+            "imgpath":"Heroku.svg",
+            "level": 2,
+            "experience": "2017"
+        },
+        {
+            "name": "Netlify",
+            "imgpath":"Netlify.svg",
+            "level": 2,
+            "experience": "2019"
+        },
+        {
+            "name": "github",
+            "imgpath":"github.svg",
+            "level": 5,
+            "experience": "2017"
+        },
+        {
+            "name": "VisualStudio",
+            "imgpath":"VisualStudio.svg",
+            "level": 3,
+            "experience": "2013.5"
+        },
+        {
+            "name": "IntelliJ",
+            "imgpath":"IntelliJ.svg",
+            "level": 3,
+            "experience": "2018"
+        },
+        {
+            "name": "VisualStudioCode",
+            "imgpath":"VisualStudioCode.svg",
+            "level": 4,
+            "experience": "2018"
+        },
+        {
+            "name": "Android",
+            "imgpath":"Android.svg",
+            "level": 2,
+            "experience": "2018"
+        }
+    ],
+    "Qualification": [
+        {
+            "name": "ITパスポート",
+            "imgpath":"",
+            "level": 0,
+            "experience": "2016.7"
+        },
+        {
+            "name": "基本情報技術者",
+            "imgpath":"",
+            "level": 0,
+            "experience": "2017.11"
+        },
+        {
+            "name": "応用情報技術者",
+            "imgpath":"",
+            "level": 0,
+            "experience": "2019.6"
+        }
+    ]
 }

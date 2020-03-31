@@ -1,108 +1,70 @@
 <template>
-  <section id="about-page" class="inner">
-    <pageTitle :title="'About'" />
-    <div id="page-content-area">
-      <section>
-        <!-- 自己紹介セクション -->
-        <pageItemTitle
-          :title="productJson.introduce.title"
-          :subtitle="productJson.introduce.subtitle"
-        />
-        <introduceCard
-          :name="productJson.introduce.name"
-          :content="productJson.introduce.content"
-          :link="productJson.introduce.link"
-        />
-      </section>
-      <!-- 趣味エリア -->
-      <section>
-        <pageItemTitle
-          :title="productJson.hobby.title"
-          :subtitle="productJson.hobby.subtitle"
-        />
-        <div class="flex-box">
-          <hobbyCard
-            v-for="(value, index) in productJson.hobby.category"
-            :key="value.id"
-            :index="index"
-            :name="value"
-          />
-        </div>
-      </section>
+  <section>
+    <firstTitle
+      :title="'Welcome to My Portfolio!'"
+      :subtitle="'ようこそ！ぜひ見ていってください！'"
+    />
+    <selfintro class="selfintro-frame top-middle-space" :imgpath="'/img/icon.png'" :name="'Sora YAMAGUCHI'" :nameSub="'山口 宙来'" :description="description"/>
 
-      <!-- 所属団体エリア -->
-      <section class="introduce">
-        <pageItemTitle
-          :title="productJson.affiliation.title"
-          :subtitle="productJson.affiliation.subtitle"
-        />
-        <div class="flex-box">
-          <introduceDetail
-            class="three-equally"
-            v-for="org in productJson.affiliation.orglist"
-            :key="org.id"
-            :title="org.name"
-            :content="org.content"
-            :link="org.link"
-          />
-        </div>
-      </section>
-
-      <!-- 研究室 -->
-      <section>
-        <pageItemTitle
-          :title="productJson.lab.title"
-          :subtitle="productJson.lab.subtitle"
-        />
-        <labCard
-          :labname="productJson.lab.labname"
-          :teacher="productJson.lab.teacher"
-          :labthema="productJson.lab.labthema"
-          :mythema="productJson.lab.mythema"
-          :content="productJson.lab.content"
-          :link="productJson.lab.link"
-
-        />
-      </section>
-
-      <!--経歴 -->
-      <section>
-        <pageItemTitle :title="productJson.career.title" :subtitle="productJson.career.subtitle" />
-        <careerCard :list="productJson.career.list"/>
-      </section>
-    </div>
+    <!-- 所属団体 -->
+    <section class="org-area top-middle-space">
+      <secondTitle :title="'Orgnization'" :subtitle="'私の所属する組織'" />
+      <ul class="top-small-space">
+        <li><clubintro :name="'横浜分室'" :description="'hoge'" :imgpath="'https://pbs.twimg.com/profile_images/1272197668/stoyc_400x400.jpg'" :link="link"/></li>
+        <li><clubintro :name="'デジタルコンテンツ研究会'" :description="'hoge'" :imgpath="'https://pbs.twimg.com/profile_images/378800000068421807/cdc807adc80db6980632a40ab41090f2_400x400.png'"/></li>
+        <li><clubintro :name="'学科学生会'" :description="'hoge'" :imgpath="'https://pbs.twimg.com/profile_images/875409727118647296/OcDjNVIo_400x400.jpg'"/></li>
+      </ul>
+    </section>
   </section>
 </template>
 
-<style scoped>
-  section{
-    margin-bottom:5vh;
-  }
-</style>
-
 <script>
-import pageTitle from "~/components/pagetitle";
-import pageItemTitle from "~/components/pageitemtitle";
-import introduceCard from "~/components/about/introducecard";
-import introduceDetail from "~/components/about/introducedetail";
-import hobbyCard from "~/components/about/hobbycard";
-import labCard from "~/components/about/labcard";
-import careerCard from "~/components/about/careercard";
+import firstTitle from "~/components/firstTitle";
+import secondTitle from "~/components/secondTitle";
+import selfintro from "~/components/about/selfintro";
+import clubintro from "~/components/about/clubintro"
 
 export default {
-  asyncData({ store }) {
-    return {
-      productJson : require(`~/assets/json/about.json`)
-    };
-  },
   components: {
-    pageTitle,
-    pageItemTitle,
-    introduceCard,
-    introduceDetail,
-    hobbyCard,
-    labCard,
-    careerCard
+    firstTitle,
+    secondTitle,
+    selfintro,
+    clubintro
+  },
+  data(){
+    return{
+      description:"現在大学4年生のエンジニア。Webアプリの開発(特にフロントエンド)ばかりやっています。最近はAIに興味があり、自分でちょっとずつ勉強してみています...。",
+      link:[
+        {imgName:"twitter",color:"#00acee",name:"twitter",path:"https://twitter.com/TenYDGB"}
+      ]
+    }
+
   }
 };
 </script>
+
+<style>
+
+.selfintro-frame{
+  padding:0 18%;
+  width:100%;
+}
+
+section.org-area > ul{
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+section.org-area > ul > li{
+  width:33%;
+  padding:1%;
+}
+@media screen and (max-width: 640px){
+  section.org-area > ul > li{
+    width:100%;
+    padding:1% 20%;
+  }  
+}
+
+  </style>

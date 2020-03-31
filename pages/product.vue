@@ -1,38 +1,34 @@
 <template>
-  <section class="inner">
-    <pageTitle :title="'Product'" />
-    <ul class="flex-box">
-      <li v-for="productItem in productJson" :key="productItem.id">
-        <productCard :name="productItem.name" :dev="productItem.dev" :skill="productItem.skill" :description="productItem.description" :link="productItem.link"/>  
-      </li>
-    </ul>
+  <section>
+    <firstTitle :title="'My Products'" :subtitle="'これまでに私が関わった愛すべき作品たち。'"/>
+    <productList class="product-frame top-middle-space" :productList="productJson"/>
   </section>
 </template>
 
-<style scoped>
-  li{
-    width:45%;
-  }
-
-  @media screen and (max-width: 480px){
-    li{
-      width:100%;
-    }
-  }
-</style>
-
 <script>
-import pageTitle from "~/components/pagetitle";
-import productCard from "~/components/productcard"
+import firstTitle from "~/components/firstTitle"
+import productList from "~/components/productList"
+
 export default {
-  asyncData({store}){
-    return{
-      productJson: require(`~/assets/json/product.json`)
-    }
+  components:{
+    firstTitle,
+    productList
   },
-  components: {
-    pageTitle,
-    productCard
+  data() {
+    return {
+      productJson:{}
+    };
+  },
+  created() {
+    this.productJson = require(`~/assets/json/product.json`);
   }
-};
+}
 </script>
+
+<style>
+.product-frame{
+  width:100%;
+  padding:0 10%;
+}
+
+</style>

@@ -41,6 +41,8 @@ export default {
 <style>
 
 .club-intro-box{
+  height:100%;
+  width:100%;
   padding:5%;
   background-color: #f5f5f5;
 }

@@ -47,6 +47,9 @@ export default {
 
 .selfintro-frame{
   width:100%;
+  max-width:800px;
+  margin-right:auto;
+  margin-left:auto;
 }
 
 section.org-area > ul{

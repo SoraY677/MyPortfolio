@@ -48,9 +48,8 @@ export default {
     exlink
   },
   mounted() {
-    // アニメーション設定
     this.$store.commit("animeStack/pushAnime", {
-      regist: "test",
+      regist: "top",
       anime: {
         name: "scaleup-fadein",
         duration: 0.3
@@ -58,7 +57,7 @@ export default {
       dom: this.$refs.keyVisual
     });
     this.$store.commit("animeStack/pushAnime", {
-      regist: "test",
+      regist: "top",
       anime: {
         name: "scaleup-fadein",
         duration: 0.3
@@ -66,7 +65,7 @@ export default {
       dom: this.$refs.link01
     });
     this.$store.commit("animeStack/pushAnime", {
-      regist: "test",
+      regist: "top",
       anime: {
         name: "scaleup-fadein",
         duration: 0.3
@@ -74,7 +73,7 @@ export default {
       dom: this.$refs.link02
     });
     this.$store.commit("animeStack/pushAnime", {
-      regist: "test",
+      regist: "top",
       anime: {
         name: "scaleup-fadein",
         duration: 0.3

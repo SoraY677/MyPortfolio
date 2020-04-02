@@ -1,5 +1,5 @@
 <template>
-  <h1 class="first-title">
+  <h1 ref="firstTitle" class="first-title">
     <span class="title">
       {{title}}
     </span>
@@ -12,8 +12,20 @@
 <script>
 export default {
   props:{
-    title:"",
-    subtitle:""
+    title:String,
+    subtitle:String,
+    animeresist:String
+  },
+  mounted(){
+    this.$store.commit("animeStack/pushAnime", {
+      regist: this.animeresist,
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3,
+        distance:600
+      },
+      dom: this.$refs.firstTitle
+    });
   }
 
 }

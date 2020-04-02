@@ -2,7 +2,7 @@ module.exports = {
   modules: ["nuxt-fontawesome"],
   mode: "spa",
   //plugins
-  plugins: ["~/plugins/scroll.js"],
+  plugins: [],
   /*
    ** Headers of the page
    */
@@ -40,12 +40,16 @@ module.exports = {
   /*
   共通のcss定義
   */
-  css: ["@/assets/css/common.css", "@/assets/css/reset.css"],
+  css: [
+    "@/assets/css/common.css",
+    "@/assets/css/common-animation.css",
+    "@/assets/css/reset.css"
+  ],
   fontawesome: {
     imports: [
       {
-        set: '@fortawesome/free-brands-svg-icons',
-        icons: ['fab']
+        set: "@fortawesome/free-brands-svg-icons",
+        icons: ["fab"]
       }
     ]
   }

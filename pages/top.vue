@@ -3,14 +3,14 @@
     <!--TODO: 言語選択ボタン -->
 
     <!-- キービジュアル -->
-    <div class="key-visual">
+    <div ref="keyVisual" class="key-visual">
       <p class="title">My PortFolio</p>
       <p class="sub-title">Sora Yamaguchi</p>
     </div>
 
     <!-- リンク集 -->
     <ul>
-      <li>
+      <li ref="link01">
         <!-- twitter -->
         <exlink
           :linkImgName="'twitter'"
@@ -19,7 +19,7 @@
           :linkPath="'https://twitter.com/TenYDGB'"
         />
       </li>
-      <li>
+      <li ref="link02">
         <!-- github -->
         <exlink
           :linkImgName="'github'"
@@ -28,7 +28,7 @@
           :linkPath="'https://github.com/SoraY677'"
         />
       </li>
-      <li>
+      <li ref="link03">
         <!-- qiita -->
         <exlink
           :linkImgName="''"
@@ -46,6 +46,41 @@ import exlink from "~/components/exlink";
 export default {
   components: {
     exlink
+  },
+  mounted() {
+    // アニメーション設定
+    this.$store.commit("animeStack/pushAnime", {
+      regist: "test",
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3
+      },
+      dom: this.$refs.keyVisual
+    });
+    this.$store.commit("animeStack/pushAnime", {
+      regist: "test",
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3
+      },
+      dom: this.$refs.link01
+    });
+    this.$store.commit("animeStack/pushAnime", {
+      regist: "test",
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3
+      },
+      dom: this.$refs.link02
+    });
+    this.$store.commit("animeStack/pushAnime", {
+      regist: "test",
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3
+      },
+      dom: this.$refs.link03
+    });
   }
 };
 </script>
@@ -80,16 +115,16 @@ section.top > ul li {
   padding: 0 10px;
 }
 
-@media screen and (max-width: 540px){
-  section.top > .key-visual{
+@media screen and (max-width: 540px) {
+  section.top > .key-visual {
     padding: 12% 18%;
   }
   section.top > .key-visual > .title {
-  font-size: 2.0rem;
-}
+    font-size: 2rem;
+  }
 
-section.top > .key-visual > .sub-title {
-  font-size: 1.0em;
-}
+  section.top > .key-visual > .sub-title {
+    font-size: 1em;
+  }
 }
 </style>

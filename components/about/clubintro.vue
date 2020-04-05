@@ -1,12 +1,12 @@
 <template>
-  <section class="club-intro-box">
+  <section ref="clubIntro" class="club-intro-box">
     <div class="icon square">
       <div>
-        <img :src="imgpath">
+        <img :src="imgpath" />
       </div>
     </div>
     <div class="description-container">
-      <h2>{{name}}</h2>
+      <h2>{{ name }}</h2>
       <!-- <p>{{description}}</p> -->
       <!-- <ul>
       <li v-for="linkel in link" :key="linkel.id">
@@ -23,53 +23,63 @@
 </template>
 
 <script>
-import exlink from "~/components/exlink"
+import exlink from "~/components/exlink";
 
 export default {
-  props:{
-    imgpath:String,
-    name:String,
-    description:String,
-    link:Array
+  props: {
+    imgpath: String,
+    name: String,
+    description: String,
+    link: Array,
+    animeregist: String,
   },
-  components:{
-    exlink
-  }
-}
+  components: {
+    exlink,
+  },
+  mounted() {
+    this.$store.commit("animeStack/pushAnime", {
+      regist: this.animeregist,
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3,
+      },
+      dom: this.$refs.clubIntro,
+    });
+  },
+};
 </script>
 
 <style>
-
-.club-intro-box{
-  height:100%;
-  width:100%;
-  padding:5%;
+.club-intro-box {
+  height: 100%;
+  width: 100%;
+  padding: 5%;
   background-color: #f5f5f5;
 }
-.club-intro-box > .icon{
-  width:60%;
-  margin:0 auto;
+.club-intro-box > .icon {
+  width: 60%;
+  margin: 0 auto;
 }
 
-.club-intro-box > .icon img{
-  width:100%;
-  height:100%;
+.club-intro-box > .icon img {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  border:2px solid #a1d8e2;
+  border: 2px solid #a1d8e2;
 }
-.club-intro-box > .description-container{
-  width:100%;
-  padding:0 10%;
+.club-intro-box > .description-container {
+  width: 100%;
+  padding: 0 10%;
 }
 
-.club-intro-box > .description-container h2{
-  font-size:1.3vw;
+.club-intro-box > .description-container h2 {
+  font-size: 1.3vw;
   text-align: center;
 }
 
-@media screen  and (max-width: 640px){
-  .club-intro-box > .description-container h2{
-    font-size:3vw;
+@media screen and (max-width: 640px) {
+  .club-intro-box > .description-container h2 {
+    font-size: 3vw;
   }
 }
 </style>

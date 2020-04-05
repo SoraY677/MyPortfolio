@@ -1,0 +1,30 @@
+/* animeStack.jsで実装されるアニメーション定義 */
+/* ================= */
+/* 0%{opacity:0;} */
+/* 100%{opacity:1;} */
+/* を必ず記述すること */
+
+
+@keyframes scaleup-fadein{
+  0%{
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+@keyframes rotate-scaleup{
+  0%{
+    opacity: 0;
+    transform: scale(0.9);
+    transform:rotate(-21deg);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1.0);
+    transform:rotate(0deg);
+  }
+}

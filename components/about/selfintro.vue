@@ -1,11 +1,11 @@
 <template>
   <div class="self-intro">
-    <div class="icon-frame square">
+    <div ref="iconFrame" class="icon-frame square">
       <div>
         <img :src="imgpath" class="intro-icon" />
       </div>
     </div>
-    <div class="description-container">
+    <div ref="description" class="description-container">
       <div class="description">
         <h2>
           <p class="title">{{ name }}</p>
@@ -25,7 +25,28 @@ export default {
     imgpath: String,
     name: String,
     nameSub: String,
-    description: String
+    description: String,
+    animeregist:String
+  },
+  mounted() {
+    this.$store.commit("animeStack/pushAnime", {
+      regist: this.animeregist,
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3,
+        distance: 600,
+      },
+      dom: this.$refs.iconFrame,
+    });
+    this.$store.commit("animeStack/pushAnime", {
+      regist: this.animeregist,
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3,
+        distance: 600,
+      },
+      dom: this.$refs.description,
+    });
   }
 };
 </script>
@@ -100,7 +121,7 @@ img.intro-icon {
   }
   .self-intro > .icon-frame {
     width: 60%;
-    margin:0 auto;
+    margin: 0 auto;
   }
 
   .self-intro > .description-container {
@@ -114,12 +135,11 @@ img.intro-icon {
     transform: translate(-50%, -50%) rotate(45deg);
   }
 
-
-  .self-intro > .description-container > .description > h2 > .title{
-    font-size:1.4rem;
+  .self-intro > .description-container > .description > h2 > .title {
+    font-size: 1.4rem;
   }
-  .self-intro > .description-container > .description > h2 > .titlesub{
-    font-size:1.0rem;
+  .self-intro > .description-container > .description > h2 > .titlesub {
+    font-size: 1rem;
   }
 }
 </style>

@@ -1,80 +1,81 @@
 <template>
   <section>
     <firstTitle title="My Tech" subtitle="身に着けた技術" />
+
     <section class="tech-list top-middle-space">
-     <secondTitle title="Language" subtitle="言語"/>
+      <secondTitle title="Language" subtitle="言語" animeregist="language-list" />
       <ul>
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.Language"
           :key="skillel.id"
         >
-          <techcard :techJson="skillel" />
+          <techcard :techJson="skillel" animeregist="language-list" />
         </li>
       </ul>
     </section>
 
     <section class="tech-list top-middle-space">
-      <secondTitle title="Framework" subtitle="フレームワーク"/>
+      <secondTitle title="Framework" subtitle="フレームワーク" animeregist="framework-list"/>
       <ul>
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.Framework"
           :key="skillel.id"
         >
-          <techcard :techJson="skillel" />
+          <techcard :techJson="skillel" animeregist="framework-list"/>
         </li>
       </ul>
     </section>
 
     <section class="tech-list top-middle-space">
-      <secondTitle title="Tools" subtitle="ツール"/>
+      <secondTitle title="Tools" subtitle="ツール" animeregist="tool-list"/>
       <ul>
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.Tool"
           :key="skillel.id"
         >
-          <techcard :techJson="skillel" />
+          <techcard :techJson="skillel" animeregist="tool-list"/>
         </li>
       </ul>
     </section>
 
     <section class="tech-list top-middle-space">
-      <secondTitle title="OS" subtitle="OS系統"/>
+      <secondTitle title="OS" subtitle="OS系統" animeregist="os-list"/>
       <ul>
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.OS"
           :key="skillel.id"
         >
-          <techcard :techJson="skillel" />
+          <techcard :techJson="skillel" animeregist="os-list"/>
         </li>
       </ul>
     </section>
 
     <section class="tech-list top-middle-space">
-      <secondTitle title="Others" subtitle="その他"/>
+      <secondTitle title="Others" subtitle="その他" animeregist="other-list"/>
       <ul>
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.Other"
           :key="skillel.id"
         >
-          <techcard :techJson="skillel" />
+          <techcard :techJson="skillel" animeregist="other-list"/>
         </li>
       </ul>
     </section>
 
     <section class="tech-list top-middle-space">
-      <secondTitle title="qualification" subtitle="資格"/>
+      <secondTitle title="qualification" subtitle="資格" animeregist="qual-list"/>
       <ul>
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.Qualification"
           :key="skillel.id"
         >
-          <techcard :techJson="skillel" />
+          <techcard :techJson="skillel" animeregist="qual-list"/>
         </li>
       </ul>
     </section>
@@ -86,18 +87,17 @@ import firstTitle from "~/components/firstTitle";
 import secondTitle from "~/components/secondTitle";
 import techcard from "~/components/techcard";
 
-
 export default {
-  data(){
-    return{
-      skillJson:this.$store.getters['jsonstore/skill']
-    }
+  data() {
+    return {
+      skillJson: this.$store.getters["jsonstore/skill"],
+    };
   },
   components: {
     firstTitle,
     secondTitle,
-    techcard
-  }
+    techcard,
+  },
 };
 </script>
 

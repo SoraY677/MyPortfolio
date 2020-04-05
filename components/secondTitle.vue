@@ -1,5 +1,5 @@
 <template>
-  <h2 class="second-title">
+  <h2 ref="secondTitle" class="second-title">
     <!-- カギかっこ用 -->
     <span class="second-title-frame"></span>
     <span class="second-title-frame"></span>
@@ -15,8 +15,20 @@
 export default {
   props: {
     title: String,
-    subtitle: String
-  }
+    subtitle: String,
+    animeregist: String,
+  },
+  mounted() {
+    this.$store.commit("animeStack/pushAnime", {
+      regist: this.animeregist,
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3,
+        distance: 350,
+      },
+      dom: this.$refs.secondTitle,
+    });
+  },
 };
 </script>
 

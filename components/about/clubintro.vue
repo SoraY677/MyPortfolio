@@ -2,12 +2,12 @@
   <section ref="clubIntro" class="club-intro-box">
     <div class="icon square">
       <div>
-        <img :src="imgpath" />
+        <img :src="aboutJson.imgpath" />
       </div>
     </div>
     <div class="description-container">
-      <h2>{{ name }}</h2>
-      <!-- <p>{{description}}</p> -->
+      <h2>{{ aboutJson.name }}</h2>
+      <p>{{aboutJson.description}}</p>
       <!-- <ul>
       <li v-for="linkel in link" :key="linkel.id">
         <exlink
@@ -27,10 +27,7 @@ import exlink from "~/components/exlink";
 
 export default {
   props: {
-    imgpath: String,
-    name: String,
-    description: String,
-    link: Array,
+    aboutJson:Object,
     animeregist: String,
   },
   components: {
@@ -76,6 +73,11 @@ export default {
   font-size: 1.3vw;
   text-align: center;
 }
+.club-intro-box > .description-container p{
+  min-height:8rem;
+  max-height: 8rem;
+  overflow: auto;
+} 
 
 @media screen and (max-width: 640px) {
   .club-intro-box > .description-container h2 {

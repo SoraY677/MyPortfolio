@@ -1,6 +1,11 @@
 <template>
   <ul class="product-list">
-    <li class="square" v-for="productel in productList" :key="productel.id">
+    <li
+      ref="product"
+      class="square"
+      v-for="productel in productList"
+      :key="productel.id"
+    >
       <div>
         <div class="content">
           <div class="product-cover">
@@ -19,8 +24,21 @@
 <script>
 export default {
   props: {
-    productList: Array
-  }
+    productList: Array,
+    animeregist: String,
+  },
+  mounted() {
+    for (let pi = 0; pi < this.productList.length; pi++) {
+      this.$store.commit("animeStack/pushAnime", {
+        regist: this.animeregist,
+        anime: {
+          name: "scaleup-fadein",
+          duration: 0.3,
+        },
+        dom: this.$refs.product[pi],
+      });
+    }
+  },
 };
 </script>
 
@@ -57,8 +75,8 @@ export default {
   opacity: 1;
 }
 
-.product-cover > span{
-  color:#fff;
+.product-cover > span {
+  color: #fff;
 }
 
 .product-thumbnail {

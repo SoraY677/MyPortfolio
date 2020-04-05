@@ -1,40 +1,38 @@
 <template>
   <section class="top">
-    <!--TODO: 言語選択ボタン -->
 
-    <!-- キービジュアル -->
-    <div ref="keyVisual" class="key-visual">
-      <p class="title">My PortFolio</p>
-      <p class="sub-title">Sora Yamaguchi</p>
-    </div>
+    <keyVisual/>
 
     <!-- リンク集 -->
     <ul>
-      <li ref="link01">
+      <li>
         <!-- twitter -->
         <exlink
           :linkImgName="'twitter'"
           :basecolor="'#00acee'"
           :linkName="'twitter'"
           :linkPath="'https://twitter.com/TenYDGB'"
+          animeregist="top"
         />
       </li>
-      <li ref="link02">
+      <li>
         <!-- github -->
         <exlink
           :linkImgName="'github'"
           :basecolor="'#000'"
           :linkName="'github'"
           :linkPath="'https://github.com/SoraY677'"
+          animeregist="top"
         />
       </li>
-      <li ref="link03">
+      <li>
         <!-- qiita -->
         <exlink
           :linkImgName="''"
           :basecolor="'#55c500'"
           :linkName="'Qiita'"
           :linkPath="'https://qiita.com/SoraYamaguchi'"
+          animeregist="top"
         />
       </li>
     </ul>
@@ -42,67 +40,17 @@
 </template>
 
 <script>
+import keyVisual from "~/components/keyVisual"
 import exlink from "~/components/exlink";
 export default {
   components: {
-    exlink
-  },
-  mounted() {
-    this.$store.commit("animeStack/pushAnime", {
-      regist: "top",
-      anime: {
-        name: "scaleup-fadein",
-        duration: 0.3
-      },
-      dom: this.$refs.keyVisual
-    });
-    this.$store.commit("animeStack/pushAnime", {
-      regist: "top",
-      anime: {
-        name: "scaleup-fadein",
-        duration: 0.3
-      },
-      dom: this.$refs.link01
-    });
-    this.$store.commit("animeStack/pushAnime", {
-      regist: "top",
-      anime: {
-        name: "scaleup-fadein",
-        duration: 0.3
-      },
-      dom: this.$refs.link02
-    });
-    this.$store.commit("animeStack/pushAnime", {
-      regist: "top",
-      anime: {
-        name: "scaleup-fadein",
-        duration: 0.3
-      },
-      dom: this.$refs.link03
-    });
+    exlink,
+    keyVisual
   }
 };
 </script>
 
 <style>
-/* キービジュアル */
-section.top > .key-visual {
-  width: fit-content;
-  margin: 50px auto 0 auto;
-  padding: 14% 20%;
-  border: 4px solid #00608d;
-  border-radius: 30px;
-  text-align: center;
-}
-
-section.top > .key-visual > .title {
-  font-size: 3em;
-}
-
-section.top > .key-visual > .sub-title {
-  font-size: 1.4em;
-}
-
 /* リンク集 */
 section.top > ul {
   display: flex;

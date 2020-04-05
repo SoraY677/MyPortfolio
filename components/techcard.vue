@@ -1,5 +1,5 @@
 <template>
-  <div class="tech-card">
+  <div ref="techCard" class="tech-card">
     <div v-if="techJson.imgpath != ''" class="img-container square">
       <div>
         <img :src="'/img/skill/' + techJson.imgpath" />
@@ -20,7 +20,18 @@
 <script>
 export default {
   props: {
-    techJson: {}
+    techJson: {}, 
+    animeregist:String
+  },
+  mounted(){
+    this.$store.commit("animeStack/pushAnime", {
+      regist: this.animeregist,
+      anime: {
+        name: "rotate-scaleup",
+        duration: 0.1
+      },
+      dom: this.$refs.techCard,
+    });
   }
 };
 </script>

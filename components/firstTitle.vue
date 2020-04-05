@@ -14,15 +14,15 @@ export default {
   props:{
     title:String,
     subtitle:String,
-    animeresist:String
+    animeregist:String
   },
   mounted(){
     this.$store.commit("animeStack/pushAnime", {
-      regist: this.animeresist,
+      regist: this.animeregist,
       anime: {
         name: "scaleup-fadein",
         duration: 0.3,
-        distance:600
+        distance:300
       },
       dom: this.$refs.firstTitle
     });

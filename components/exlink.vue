@@ -1,5 +1,5 @@
 <template>
-  <a class="ex-link" target="_blank" :href="linkPath" :style="{backgroundColor:basecolor}">
+  <a ref="exlink" class="ex-link" target="_blank" :href="linkPath" :style="{backgroundColor:basecolor}">
     <div v-if="linkImgName!=''" class="img-link">
       <div class="icon-container">
         <font-awesome-icon :icon="['fab', linkImgName]" />
@@ -20,7 +20,18 @@ export default {
     linkPath:String,
     linkImgName: String,
     basecolor: String,
-    linkName: String
+    linkName: String,
+    animeregist:String
+  },
+  mounted(){
+    this.$store.commit("animeStack/pushAnime", {
+      regist: this.animeregist,
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3
+      },
+      dom: this.$refs.exlink
+    });
   }
 };
 </script>

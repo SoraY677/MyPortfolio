@@ -24,7 +24,7 @@ export default {
       anime: {
         name: "scaleup-fadein",
         duration: 0.3,
-        distance: 350,
+        distance: 600,
       },
       dom: this.$refs.secondTitle,
     });

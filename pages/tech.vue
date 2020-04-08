@@ -4,7 +4,7 @@
 
     <section class="tech-list top-middle-space">
       <secondTitle title="Language" subtitle="言語" animeregist="language-list" />
-      <ul>
+      <ul class=" top-small-space">
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.Language"
@@ -17,7 +17,7 @@
 
     <section class="tech-list top-middle-space">
       <secondTitle title="Framework" subtitle="フレームワーク" animeregist="framework-list"/>
-      <ul>
+      <ul class=" top-small-space">
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.Framework"
@@ -30,7 +30,7 @@
 
     <section class="tech-list top-middle-space">
       <secondTitle title="Tools" subtitle="ツール" animeregist="tool-list"/>
-      <ul>
+      <ul class=" top-small-space">
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.Tool"
@@ -43,7 +43,7 @@
 
     <section class="tech-list top-middle-space">
       <secondTitle title="OS" subtitle="OS系統" animeregist="os-list"/>
-      <ul>
+      <ul class=" top-small-space">
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.OS"
@@ -56,7 +56,7 @@
 
     <section class="tech-list top-middle-space">
       <secondTitle title="Others" subtitle="その他" animeregist="other-list"/>
-      <ul>
+      <ul class=" top-small-space">
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.Other"
@@ -69,7 +69,7 @@
 
     <section class="tech-list top-middle-space">
       <secondTitle title="qualification" subtitle="資格" animeregist="qual-list"/>
-      <ul>
+      <ul class=" top-small-space">
         <li
           class="teck-card-cotainer"
           v-for="skillel in skillJson.Qualification"

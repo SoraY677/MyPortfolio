@@ -1,5 +1,5 @@
 <template>
-  <section class="lab-intro">
+  <section ref="labIntro" class="lab-intro">
     <div class="visual">
       <div class="icon-container square">
         <div>
@@ -8,11 +8,10 @@
       </div>
       <div class="overview-container">
         <h3 class="lab-name">{{ aboutJson.name }}</h3>
-        <h3 class="teacher-name">{{ aboutJson.teacher }}</h3>
-        <h3 class="lab-thema">{{ aboutJson.thema }}</h3>
+        <p class="teacher-name">{{ aboutJson.teacher }}</p>
+        <p class="lab-thema">{{ aboutJson.thema }}</p>
       </div>
     </div>
-    <p>{{ aboutJson.content }}</p>
   </section>
 </template>
 
@@ -20,7 +19,18 @@
 export default {
   props: {
     aboutJson: {},
+    animeregist:String
   },
+  mounted() {
+    this.$store.commit("animeStack/pushAnime", {
+      regist: this.animeregist,
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3
+      },
+      dom: this.$refs.labIntro
+    });
+  }
 };
 </script>
 
@@ -32,14 +42,15 @@ section.lab-intro {
   background-color: #f5f5f5;
 }
 
-section.lab-intro > .visual{
-  padding:0 10%;
+section.lab-intro > .visual {
+  padding: 0 10%;
   overflow: hidden;
+  text-align: center;
 }
 
 section.lab-intro > .visual > .icon-container {
+  display: inline-block;
   width: 30%;
-  float: left;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #a1d8e2;
@@ -50,9 +61,10 @@ section.lab-intro > .visual > .icon-container img {
 }
 
 section.lab-intro > .visual > .overview-container {
-  float: left;
-  padding:1em 0;
-  margin:  0.8rem;
+  display: inline-block;
+  width: 65%;
+  padding: 2em 0;
+  vertical-align: top;
 }
 
 section.lab-intro > .visual > .overview-container > h3.lab-name {
@@ -66,12 +78,9 @@ section.lab-intro > .visual > .overview-container > h3.teacher-name {
 section.lab-intro > .visual > .overview-container > h3.lab-thema {
 }
 
-section.lab-intro > p {
-  min-height: 100%;
-  padding: 1em 1em 1em 1em;
-  margin-top:0.3rem;
-  clear: both;
-  overflow: auto;
-  border-top: 1px solid #2e2e2e;
+@media screen and (max-width: 640px) {
+  section.lab-intro > .visual > .icon-container {
+    width: 80%;
+  }
 }
 </style>

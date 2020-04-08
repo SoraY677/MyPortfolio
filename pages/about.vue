@@ -44,7 +44,10 @@
           />
         </li>
       </ul>
-      <div class="labintro-container top-small-space"><labintro :aboutJson="aboutJson.lab"/></div>
+      <div class="labintro-container top-small-space">
+        <labintro
+        animeregist="org_title" 
+        :aboutJson="aboutJson.lab"/></div>
     </section>
   </section>
 </template>
@@ -95,7 +98,7 @@ section.org-area > ul > li {
   width:100%;
 }
 @media screen and (max-width: 640px) {
-  section.org-area > ul > li {
+  section.org-area > ul > li ,.labintro-container{
     width: 100%;
     padding: 1% 20%;
   }

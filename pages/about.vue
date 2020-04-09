@@ -24,30 +24,29 @@
       <ul class="top-small-space">
         <!-- 横浜分室 -->
         <li>
-          <clubintro
-            :aboutJson="aboutJson.affiliation[0]"
+          <orgintro
+            :aboutJson="aboutJson.orglist.bunsitu"
             animeregist="org_title"
           />
         </li>
         <!-- デジコン -->
         <li>
-          <clubintro
-            :aboutJson="aboutJson.affiliation[1]"
-            animeregist="org_title"
-          />
+          <orgintro :aboutJson="aboutJson.orglist.dc" animeregist="org_title" />
         </li>
         <!-- 学科学生会 -->
         <li>
-          <clubintro
-            :aboutJson="aboutJson.affiliation[2]"
+          <orgintro
+            :aboutJson="aboutJson.orglist.student"
+            animeregist="org_title"
+          />
+        </li>
+        <li>
+          <orgintro
+            :aboutJson="aboutJson.orglist.lab"
             animeregist="org_title"
           />
         </li>
       </ul>
-      <div class="labintro-container top-small-space">
-        <labintro
-        animeregist="org_title" 
-        :aboutJson="aboutJson.lab"/></div>
     </section>
   </section>
 </template>
@@ -56,7 +55,7 @@
 import firstTitle from "~/components/firstTitle";
 import secondTitle from "~/components/secondTitle";
 import selfintro from "~/components/about/selfintro";
-import clubintro from "~/components/about/clubintro";
+import orgintro from "~/components/about/orgintro";
 import labintro from "~/components/about/labintro";
 
 export default {
@@ -64,14 +63,14 @@ export default {
     firstTitle,
     secondTitle,
     selfintro,
-    clubintro,
+    orgintro,
     labintro
   },
   data() {
     return {
-      aboutJson: this.$store.getters["jsonstore/about"],
+      aboutJson: this.$store.getters["jsonstore/about"]
     };
-  },
+  }
 };
 </script>
 
@@ -85,22 +84,30 @@ export default {
 
 section.org-area > ul {
   display: flex;
+  width: 75%;
+  margin: 0 auto;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: baseline;
 }
 
 section.org-area > ul > li {
-  width: 33%;
+  width: 50%;
+  padding: 1%;
 }
 
-.labintro-container{
-  width:100%;
+.labintro-container {
+  width: 100%;
 }
 @media screen and (max-width: 640px) {
-  section.org-area > ul > li ,.labintro-container{
+  section.org-area > ul {
+    width: 95%;
+  }
+
+  section.org-area > ul > li,
+  .labintro-container {
     width: 100%;
-    padding: 1% 20%;
+    padding: 1% 12%;
   }
 
   .selfintro-frame {

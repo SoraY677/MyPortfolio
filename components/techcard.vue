@@ -1,5 +1,5 @@
 <template>
-  <div ref="techCard" class="tech-card">
+  <div ref="techCard" class="tech-card" @click="visibleLevelDetail($event)">
     <div v-if="techJson.imgpath != ''" class="img-container square">
       <div>
         <img :src="'/img/skill/' + techJson.imgpath" />
@@ -20,18 +20,27 @@
 <script>
 export default {
   props: {
-    techJson: {}, 
-    animeregist:String
+    techJson: Object,
+    animeregist: String
   },
-  mounted(){
+  mounted() {
     this.$store.commit("animeStack/pushAnime", {
       regist: this.animeregist,
       anime: {
         name: "rotate-scaleup",
         duration: 0.1
       },
-      dom: this.$refs.techCard,
+      dom: this.$refs.techCard
     });
+  },
+  methods: {
+    visibleLevelDetail(event) {
+      this.$emit("visibleLevelDetail", {
+        level:this.techJson.level,
+        x: event.pageX,
+        y: event.pageY
+      });
+    }
   }
 };
 </script>
@@ -59,7 +68,7 @@ export default {
 }
 .tech-card > .description {
   display: inline-block;
-  padding:2%;
+  padding: 2%;
   width: 70%;
 }
 
@@ -73,7 +82,7 @@ export default {
   border-radius: 2px;
 }
 
-.tech-card > .description > .exp{
+.tech-card > .description > .exp {
   font-size: calc(8px + ((1em - 10px) * 0.7143));
 }
 
@@ -97,28 +106,28 @@ export default {
   background-color: #f33;
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 640px) {
   .tech-card > .img-container {
-  width: 20%;
-  margin: 2%;
-  overflow: hidden;
-  border-radius: 4px;
+    width: 20%;
+    margin: 2%;
+    overflow: hidden;
+    border-radius: 4px;
   }
 
   .tech-card > .description {
-  display: inline-block;
-  padding:2%;
-  width: 76%;
-}
-}
-
-@media screen and (max-width: 480px){
-.tech-card > .description > .title {
-  font-size: 12px;
+    display: inline-block;
+    padding: 2%;
+    width: 76%;
+  }
 }
 
-.tech-card > .description > .exp {
-  font-size: 10px;
-}
+@media screen and (max-width: 480px) {
+  .tech-card > .description > .title {
+    font-size: 12px;
+  }
+
+  .tech-card > .description > .exp {
+    font-size: 10px;
+  }
 }
 </style>

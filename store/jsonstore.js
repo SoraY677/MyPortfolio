@@ -1,11 +1,13 @@
 import aboutJson from "@/assets/json/about.json";
 import skillJson from "@/assets/json/skill.json";
 import productJson from "@/assets/json/product.json";
+import skillLevelJson from "@/assets/json/skillLevel.json";
 
 export const state = () => ({
   about: aboutJson,
   skill: skillJson,
-  product: productJson,
+  skillLevel: skillLevelJson,
+  product: productJson
 });
 
 export const getters = {
@@ -15,7 +17,10 @@ export const getters = {
   skill(state) {
     return state.skill;
   },
+  skillLevel(state) {
+    return state.skillLevel;
+  },
   product(state) {
     return state.product;
-  },
+  }
 };

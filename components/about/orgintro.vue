@@ -1,5 +1,5 @@
 <template>
-  <section ref="clubIntro" class="club-intro-box">
+  <section ref="orgIntro" class="org-intro-box">
     <div class="icon square">
       <div>
         <img :src="aboutJson.imgpath" />
@@ -39,41 +39,41 @@ export default {
         name: "scaleup-fadein",
         duration: 0.3,
       },
-      dom: this.$refs.clubIntro,
+      dom: this.$refs.orgIntro,
     });
   },
 };
 </script>
 
 <style>
-.club-intro-box {
+.org-intro-box {
   height: 100%;
   width: 100%;
   padding: 5%;
   background-color: #f5f5f5;
 }
-.club-intro-box > .icon {
+.org-intro-box > .icon {
   width: 60%;
   margin: 0 auto;
 }
 
-.club-intro-box > .icon img {
+.org-intro-box > .icon img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   border: 2px solid #a1d8e2;
 }
-.club-intro-box > .description-container {
+.org-intro-box > .description-container {
   width: 100%;
   padding: 0 10%;
 }
 
-.club-intro-box > .description-container h2 {
+.org-intro-box > .description-container h2 {
   font-size: 1.3vw;
   text-align: center;
 }
 @media screen and (max-width: 640px) {
-  .club-intro-box > .description-container h2 {
+  .org-intro-box > .description-container h2 {
     font-size: 3vw;
   }
 }

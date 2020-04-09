@@ -85,7 +85,8 @@ export default {
 section.org-area > ul {
   display: flex;
   width: 75%;
-  margin: 0 auto;
+  margin-left:auto;
+  margin-right:auto;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: baseline;

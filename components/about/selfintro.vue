@@ -33,8 +33,7 @@ export default {
       regist: this.animeregist,
       anime: {
         name: "scaleup-fadein",
-        duration: 0.3,
-        distance: 600,
+        duration: 0.3
       },
       dom: this.$refs.iconFrame,
     });
@@ -43,7 +42,6 @@ export default {
       anime: {
         name: "scaleup-fadein",
         duration: 0.3,
-        distance: 600,
       },
       dom: this.$refs.description,
     });

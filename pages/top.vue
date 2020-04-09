@@ -1,7 +1,6 @@
 <template>
-  <section class="top">
-
-    <keyVisual/>
+  <div class="top">
+    <keyVisual />
 
     <!-- リンク集 -->
     <ul>
@@ -36,11 +35,11 @@
         />
       </li>
     </ul>
-  </section>
+  </div>
 </template>
 
 <script>
-import keyVisual from "~/components/keyVisual"
+import keyVisual from "~/components/keyVisual";
 import exlink from "~/components/exlink";
 export default {
   components: {
@@ -52,25 +51,25 @@ export default {
 
 <style>
 /* リンク集 */
-section.top > ul {
+.top > ul {
   display: flex;
   justify-content: center;
   margin-top: 40px;
 }
 
-section.top > ul li {
+.top > ul li {
   padding: 0 10px;
 }
 
 @media screen and (max-width: 540px) {
-  section.top > .key-visual {
+  .top > .key-visual {
     padding: 12% 18%;
   }
-  section.top > .key-visual > .title {
+  .top > .key-visual > .title {
     font-size: 2rem;
   }
 
-  section.top > .key-visual > .sub-title {
+  .top > .key-visual > .sub-title {
     font-size: 1em;
   }
 }

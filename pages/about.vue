@@ -7,10 +7,10 @@
     />
     <selfintro
       class="selfintro-frame top-middle-space"
-      :imgpath="'/img/icon.png'"
-      :name="'Sora YAMAGUCHI'"
+      :name="aboutJson.selfintro.name"
       :nameSub="'山口 宙来'"
-      :description="description"
+      :description="aboutJson.selfintro.description"
+      :imgpath="'/img/icon.png'"
       animeregist="self-intro"
     />
 
@@ -24,29 +24,25 @@
       <ul class="top-small-space">
         <!-- 横浜分室 -->
         <li>
-          <clubintro
-            :name="'横浜分室'"
-            :description="'hogeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'"
-            :imgpath="'https://pbs.twimg.com/profile_images/1272197668/stoyc_400x400.jpg'"
-            :link="link"
+          <orgintro
+            :aboutJson="aboutJson.orglist.bunsitu"
             animeregist="org_title"
           />
         </li>
         <!-- デジコン -->
         <li>
-          <clubintro
-            :name="'デジタルコンテンツ研究会'"
-            :description="'hoge'"
-            :imgpath="'https://pbs.twimg.com/profile_images/378800000068421807/cdc807adc80db6980632a40ab41090f2_400x400.png'"
+          <orgintro :aboutJson="aboutJson.orglist.dc" animeregist="org_title" />
+        </li>
+        <!-- 学科学生会 -->
+        <li>
+          <orgintro
+            :aboutJson="aboutJson.orglist.student"
             animeregist="org_title"
           />
         </li>
-        <!-- 横浜分室 -->
         <li>
-          <clubintro
-            :name="'学科学生会'"
-            :description="'hoge'"
-            :imgpath="'https://pbs.twimg.com/profile_images/875409727118647296/OcDjNVIo_400x400.jpg'"
+          <orgintro
+            :aboutJson="aboutJson.orglist.lab"
             animeregist="org_title"
           />
         </li>
@@ -59,29 +55,22 @@
 import firstTitle from "~/components/firstTitle";
 import secondTitle from "~/components/secondTitle";
 import selfintro from "~/components/about/selfintro";
-import clubintro from "~/components/about/clubintro";
+import orgintro from "~/components/about/orgintro";
+import labintro from "~/components/about/labintro";
 
 export default {
   components: {
     firstTitle,
     secondTitle,
     selfintro,
-    clubintro,
+    orgintro,
+    labintro
   },
   data() {
     return {
-      description:
-        "現在大学4年生のエンジニア。Webアプリの開発(特にフロントエンド)ばかりやっています。最近はAIに興味があり、自分でちょっとずつ勉強してみています...。",
-      link: [
-        {
-          imgName: "twitter",
-          color: "#00acee",
-          name: "twitter",
-          path: "https://twitter.com/TenYDGB",
-        },
-      ],
+      aboutJson: this.$store.getters["jsonstore/about"]
     };
-  },
+  }
 };
 </script>
 
@@ -95,19 +84,31 @@ export default {
 
 section.org-area > ul {
   display: flex;
-  justify-content: left;
+  width: 75%;
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: baseline;
 }
 
 section.org-area > ul > li {
-  width: 33%;
+  width: 50%;
   padding: 1%;
 }
+
+.labintro-container {
+  width: 100%;
+}
 @media screen and (max-width: 640px) {
-  section.org-area > ul > li {
+  section.org-area > ul {
+    width: 95%;
+  }
+
+  section.org-area > ul > li,
+  .labintro-container {
     width: 100%;
-    padding: 1% 20%;
+    padding: 1% 12%;
   }
 
   .selfintro-frame {

@@ -26,7 +26,7 @@ export default {
   width: fit-content;
   margin: 50px auto 0 auto;
   padding: 14% 20%;
-  border: 4px solid #00608d;
+  border: 6px solid #a1d8e2;
   border-radius: 30px;
   text-align: center;
 }

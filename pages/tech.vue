@@ -35,7 +35,11 @@
           v-for="skillel in skillJson.Framework"
           :key="skillel.id"
         >
-          <techcard :techJson="skillel" animeregist="framework-list" @visibleLevelDetail="visibleLevelDetail"/>
+          <techcard
+            :techJson="skillel"
+            animeregist="framework-list"
+            @visibleLevelDetail="visibleLevelDetail"
+          />
         </li>
       </ul>
     </section>
@@ -48,7 +52,11 @@
           v-for="skillel in skillJson.Tool"
           :key="skillel.id"
         >
-          <techcard :techJson="skillel" animeregist="tool-list" @visibleLevelDetail="visibleLevelDetail"/>
+          <techcard
+            :techJson="skillel"
+            animeregist="tool-list"
+            @visibleLevelDetail="visibleLevelDetail"
+          />
         </li>
       </ul>
     </section>
@@ -61,7 +69,11 @@
           v-for="skillel in skillJson.OS"
           :key="skillel.id"
         >
-          <techcard :techJson="skillel" animeregist="os-list" @visibleLevelDetail="visibleLevelDetail"/>
+          <techcard
+            :techJson="skillel"
+            animeregist="os-list"
+            @visibleLevelDetail="visibleLevelDetail"
+          />
         </li>
       </ul>
     </section>
@@ -74,7 +86,11 @@
           v-for="skillel in skillJson.Other"
           :key="skillel.id"
         >
-          <techcard :techJson="skillel" animeregist="other-list" @visibleLevelDetail="visibleLevelDetail"/>
+          <techcard
+            :techJson="skillel"
+            animeregist="other-list"
+            @visibleLevelDetail="visibleLevelDetail"
+          />
         </li>
       </ul>
     </section>
@@ -96,7 +112,11 @@
       </ul>
     </section>
     <div ref="levelDetailContainer" class="level-detail-container">
-      <skillLevelDetail :levelDetail="skillLevelJson" :levelNum="levelNum" />
+      <skillLevelDetail
+        v-if="levelNum"
+        :levelDetail="skillLevelJson"
+        :levelNum="levelNum"
+      />
     </div>
   </section>
 </template>

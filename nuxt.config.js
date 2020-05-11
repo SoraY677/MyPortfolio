@@ -1,5 +1,5 @@
 module.exports = {
-  modules: ["nuxt-fontawesome"],
+  modules: ["nuxt-fontawesome","@nuxtjs/axios"],
   mode: "spa",
   //plugins
   plugins: [],

@@ -36,15 +36,21 @@
     <div class="send-bt-container top-small-space">
       <button @click="sendMail()">送信</button>
     </div>
+    <contactModal :isShow="isShowModal" @close="closeModal" />
   </div>
 </template>
 
 <script>
+import contactModal from "~/components/contactModal";
+
 export default {
   head() {
     return {
       script: [{ src: "https://smtpjs.com/v3/smtp.js" }]
     };
+  },
+  components: {
+    contactModal
   },
   props: {
     animeregist: ""
@@ -53,7 +59,8 @@ export default {
     return {
       name: "",
       address: "",
-      body: ""
+      body: "",
+      isShowModal: false
     };
   },
   computed: {
@@ -74,6 +81,9 @@ export default {
     });
   },
   methods: {
+    closeModal() {
+      this.isShowModal = false;
+    },
     async sendMail() {
       // CORSエラー対策
       const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
@@ -84,8 +94,8 @@ export default {
       params.append("entry.2145197953", this.name);
       params.append("entry.663343677", this.address);
       params.append("entry.1396251703", this.body);
-
-      await this.$axios.$post(CORS_PROXY + GOOGLE_FORM_ACTION, params);
+      this.isShowModal = true;
+      // await this.$axios.$post(CORS_PROXY + GOOGLE_FORM_ACTION, params);
     }
   }
 };
@@ -97,7 +107,7 @@ export default {
 }
 
 .contact-textbox-container .textbox-title {
-  padding: 0.2em;
+  padding: 0.5em;
   margin-bottom: 0.4em;
   font-size: 1.2em;
   font-weight: bold;
@@ -109,7 +119,7 @@ export default {
   height: 2.5em;
   padding: 0.6em;
   border-radius: 20px;
-  font-size: 1em;
+  font-size: 1.4em;
 }
 
 .contact-textbox-container textarea:focus {

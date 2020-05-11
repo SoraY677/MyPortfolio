@@ -1,8 +1,8 @@
 <template>
-  <div class="contact-form">
+  <div class="contact-form" ref="contact_form">
     <div class="contact-textbox-container top-small-space">
       <p class="textbox-title">あなたのお名前</p>
-      <textarea v-model="name"></textarea>
+      <textarea v-model="name" name="entry.2145197953"></textarea>
 
       <p class="attention">
         <span v-if="name === ''">
@@ -34,13 +34,21 @@
     </div>
 
     <div class="send-bt-container top-small-space">
-      <button>送信</button>
+      <button @click="sendMail()">送信</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  head() {
+    return {
+      script: [{ src: "https://smtpjs.com/v3/smtp.js" }]
+    };
+  },
+  props: {
+    animeregist: ""
+  },
   data() {
     return {
       name: "",
@@ -54,14 +62,36 @@ export default {
         return true;
       else return false;
     }
+  },
+  mounted() {
+    this.$store.commit("animeStack/pushAnime", {
+      regist: this.animeregist,
+      anime: {
+        name: "scaleup-fadein",
+        duration: 0.3
+      },
+      dom: this.$refs.contact_form
+    });
+  },
+  methods: {
+    async sendMail() {
+      // CORSエラー対策
+      const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+      // Googleフォームのaction属性値
+      const GOOGLE_FORM_ACTION =
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLScNaX1t1grG6uIi5qG2pfnpFBf0fGr4S5HtUFESlPiu1xw1Yw/formResponse";
+      const params = new FormData();
+      params.append("entry.2145197953", this.name);
+      params.append("entry.663343677", this.address);
+      params.append("entry.1396251703", this.body);
+
+      await this.$axios.$post(CORS_PROXY + GOOGLE_FORM_ACTION, params);
+    }
   }
 };
 </script>
 
 <style>
-.contact-form {
-}
-
 .contact-textbox-container {
   padding: 0.8em;
 }

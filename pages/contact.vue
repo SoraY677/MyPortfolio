@@ -3,8 +3,9 @@
     <firstTitle
       title="Contact"
       subtitle="依頼や気になったことなどお待ちしております。"
+      animeregist="contact-anim"
     />
-    <contactForm class="top-middle-space" />
+    <contactForm class="top-middle-space" animeregist="contact-anim" />
   </section>
 </template>
 

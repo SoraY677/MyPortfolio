@@ -4,6 +4,7 @@
     <about class="section-pattern" />
     <tech class="section-pattern" />
     <product class="section-pattern" />
+    <contact class="section-pattern" />
     <footer>
       © 2020 Sora Yamaguchi All Rights Reserved
     </footer>
@@ -15,13 +16,15 @@ import top from "~/pages/top";
 import about from "~/pages/about";
 import tech from "~/pages/tech";
 import product from "~/pages/product";
+import contact from "~/pages/contact";
 
 export default {
   components: {
     top,
     about,
     tech,
-    product
+    product,
+    contact
   }
 };
 </script>
@@ -32,7 +35,8 @@ main {
   background-color: #f5f5f5;
 }
 
-.section-pattern ,footer{
+.section-pattern,
+footer {
   position: relative;
   padding: 15vw 10% 10% 10%;
 }
@@ -63,30 +67,27 @@ main {
   background-color: #a1d8e2;
 }
 
-footer{
-  padding-bottom:2em;
-  font-size:1.4rem;
+footer {
+  padding-bottom: 2em;
+  font-size: 1.4rem;
   text-align: center;
 }
 
-@media screen and (max-width: 640px){
-  .section-pattern{
-    padding-right:7%;
-    padding-left:7%;
+@media screen and (max-width: 640px) {
+  .section-pattern {
+    padding-right: 7%;
+    padding-left: 7%;
   }
 
-  footer{
-    font-size:0.9rem;
-  }
-  
-}
-
-@media screen and (max-width: 480px){
-  .section-pattern{
-    padding-right:4%;
-    padding-left:4%;
+  footer {
+    font-size: 0.9rem;
   }
 }
 
-
+@media screen and (max-width: 480px) {
+  .section-pattern {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+}
 </style>

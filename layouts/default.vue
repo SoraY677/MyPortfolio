@@ -71,6 +71,7 @@ footer {
   padding-bottom: 2em;
   font-size: 1.4rem;
   text-align: center;
+  background-color: #a1d8e2;
 }
 
 @media screen and (max-width: 640px) {

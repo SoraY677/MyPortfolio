@@ -34,9 +34,21 @@
     </div>
 
     <div class="send-bt-container top-small-space">
-      <button @click="sendMail()">送信</button>
+      <button
+        @click="confirmMail()"
+        :class="buttonMode[Number(acceptSend)]"
+        :disabled="!acceptSend"
+      >
+        送信
+      </button>
     </div>
-    <contactModal :isShow="isShowModal" @close="closeModal" />
+    <contactModal
+      :name="name"
+      :address="address"
+      :body="body"
+      :isShow="isShowModal"
+      @close="closeModal"
+    />
   </div>
 </template>
 
@@ -60,7 +72,8 @@ export default {
       name: "",
       address: "",
       body: "",
-      isShowModal: false
+      isShowModal: false,
+      buttonMode: ["disable", ""]
     };
   },
   computed: {
@@ -68,6 +81,12 @@ export default {
       if (this.address.match(/^[A-Za-z0-9]+[\w-]+@[\w\.-]+\.\w{2,}$/))
         return true;
       else return false;
+    },
+
+    acceptSend() {
+      if (this.name != "" && this.filterMailAddress && this.body != "") {
+        return true;
+      } else return false;
     }
   },
   mounted() {
@@ -84,18 +103,8 @@ export default {
     closeModal() {
       this.isShowModal = false;
     },
-    async sendMail() {
-      // CORSエラー対策
-      const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
-      // Googleフォームのaction属性値
-      const GOOGLE_FORM_ACTION =
-        "https://docs.google.com/forms/u/0/d/e/1FAIpQLScNaX1t1grG6uIi5qG2pfnpFBf0fGr4S5HtUFESlPiu1xw1Yw/formResponse";
-      const params = new FormData();
-      params.append("entry.2145197953", this.name);
-      params.append("entry.663343677", this.address);
-      params.append("entry.1396251703", this.body);
+    confirmMail() {
       this.isShowModal = true;
-      // await this.$axios.$post(CORS_PROXY + GOOGLE_FORM_ACTION, params);
     }
   }
 };
@@ -130,10 +139,12 @@ export default {
   min-height: 15em;
 }
 
-.contact-textbox-container > .attention {
+.contact-textbox-container > .attention,
+.contact-textbox-container > .attention > span {
   height: 0.8em;
+  font-size: 90%;
   color: #bf1e56;
-  text-align: right;
+  text-align: left;
 }
 
 .contact-form > .send-bt-container {
@@ -155,5 +166,21 @@ export default {
 .contact-form > .send-bt-container > button:hover {
   color: #a1d8e2;
   background-color: #fff;
+}
+
+.contact-form > .send-bt-container > button.disable,
+.contact-form > .send-bt-container > button.disable:hover {
+  border: 2px solid #ccc;
+  background-color: #ddd;
+  color: #ccc;
+}
+
+@media screen and (max-width: 810px) {
+  .contact-textbox-container .textbox-title {
+    font-size: 1em;
+  }
+  .contact-textbox-container textarea {
+    font-size: 1.2em;
+  }
 }
 </style>

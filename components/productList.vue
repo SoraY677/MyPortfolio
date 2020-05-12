@@ -7,25 +7,22 @@
       :key="productel.id"
     >
       <div>
-        <div class="content">
-          <div class="product-cover">
-            <span>{{ productel.name }}</span>
-          </div>
-          <img
-            class="product-thumbnail"
-            :src="'/img/product/' + productel.name + '.png'"
-          />
-        </div>
+        <productItem :productel="productel" class="content" />
       </div>
     </li>
   </ul>
 </template>
 
 <script>
+import productItem from "~/components/productItem";
+
 export default {
+  components: {
+    productItem
+  },
   props: {
     productList: Array,
-    animeregist: String,
+    animeregist: String
   },
   mounted() {
     for (let pi = 0; pi < this.productList.length; pi++) {
@@ -33,12 +30,12 @@ export default {
         regist: this.animeregist,
         anime: {
           name: "scaleup-fadein",
-          duration: 0.3,
+          duration: 0.3
         },
-        dom: this.$refs.product[pi],
+        dom: this.$refs.product[pi]
       });
     }
-  },
+  }
 };
 </script>
 
@@ -52,35 +49,17 @@ export default {
   margin: 2%;
 }
 
-.product-list > li .content {
+.product-list > li.content {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-.product-cover {
-  position: absolute;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  transition-duration: 0.2s;
-}
-
-.product-cover:hover {
-  opacity: 1;
-}
-
-.product-cover > span {
-  color: #fff;
-}
-
-.product-thumbnail {
-  width: 100%;
-  height: 100%;
+@media screen and (max-width: 780px) {
+  .product-list > li {
+    width: 100%;
+    margin: 10px auto;
+  }
 }
 </style>

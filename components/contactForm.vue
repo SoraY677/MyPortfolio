@@ -56,11 +56,6 @@
 import contactModal from "~/components/contactModal";
 
 export default {
-  head() {
-    return {
-      script: [{ src: "https://smtpjs.com/v3/smtp.js" }]
-    };
-  },
   components: {
     contactModal
   },

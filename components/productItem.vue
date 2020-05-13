@@ -1,19 +1,34 @@
 <template>
   <div>
-    <div class="product-cover">
+    <div class="product-cover" @click="isModalShow = 'open'">
       <span>{{ productel.name }}</span>
     </div>
     <img
       class="product-thumbnail"
       :src="'/img/product/' + productel.name + '.png'"
     />
+    <productModal :isShow="isModalShow" @close="closeModal" />
   </div>
 </template>
 
 <script>
+import productModal from "~/components/productModal";
 export default {
   props: {
     productel: {}
+  },
+  data() {
+    return {
+      isModalShow: "close"
+    };
+  },
+  components: {
+    productModal
+  },
+  methods: {
+    closeModal() {
+      this.isModalShow = "close";
+    }
   }
 };
 </script>

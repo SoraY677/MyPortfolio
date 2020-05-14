@@ -57,11 +57,8 @@ export default {
       params.append("entry.663343677", this.address);
       params.append("entry.1396251703", this.body);
       await this.$axios.$post(CORS_PROXY + GOOGLE_FORM_ACTION, params);
-      this.$emit("close");
+      this.$emit("sendedMessage");
       alert("送信しました。ありがとうございます！");
-      this.name = "";
-      this.address = "";
-      this.body = "";
     }
   },
   computed: {

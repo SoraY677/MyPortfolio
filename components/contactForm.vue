@@ -48,6 +48,7 @@
       :body="body"
       :isShow="isShowModal"
       @close="closeModal"
+      @sendedMessage="reset"
     />
   </div>
 </template>
@@ -100,6 +101,12 @@ export default {
     },
     confirmMail() {
       this.isShowModal = true;
+    },
+    reset() {
+      this.closeModal();
+      this.name = "";
+      this.address = "";
+      this.body = "";
     }
   }
 };

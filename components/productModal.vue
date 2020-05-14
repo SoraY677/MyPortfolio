@@ -7,25 +7,41 @@
     <button class="product-modal-cover" @click="$emit('close')"></button>
     <div ref="productModal" class="product-modal" :class="isShow">
       <h1>{{ productItem.name }}</h1>
+      <hr />
       <button class="close" @click="$emit('close')">
         <img src="/img/icons/times-solid.svg" />
       </button>
-      <div class="thumbnail">
+      <div class="thumbnail top-small-space">
         <img
           class="thumbnail"
           :src="'/img/product/' + productItem.name + '.png'"
         />
       </div>
       <!-- スキル系 -->
-      <ul class="product-skill">
-        <li v-for="skill in productItem.skill" :key="skill.id">
-          <img :src="'/img/skill/' + skill + '.svg'" />
-        </li>
-      </ul>
+      <div class="top-small-space">
+        <span class="product-section">使用技術</span>
+        <ul class="product-skill">
+          <li v-for="skill in productItem.skill" :key="skill.id">
+            <img :src="'/img/skill/' + skill + '.svg'" />
+          </li>
+        </ul>
+      </div>
 
       <!-- 説明文 -->
-      <div class="description">
+      <div class="top-small-space description">
+        <span class="product-section">概要</span>
         <p>{{ productItem.description }}</p>
+      </div>
+
+      <div class="top-small-space product-link">
+        <span class="product-section">リンク</span>
+        <ul>
+          <li v-for="(value, key) in productItem.link" :key="key">
+            <a :href="value" target="_blank">
+              {{ key }}
+            </a>
+          </li>
+        </ul>
       </div>
 
       <!--  -->
@@ -61,6 +77,12 @@ export default {
 </script>
 
 <style>
+.product-section {
+  padding: 0.2em;
+  color: #fff;
+  background-color: #a1d8e2;
+}
+
 .product-modal-conatainer {
   position: fixed;
   display: flex;
@@ -96,9 +118,9 @@ export default {
 }
 
 .product-modal.open {
-  height: 95%;
+  height: 90%;
   width: 85%;
-  animation: open-anime 0.6s ease 0s 1;
+  animation: open-anime 0.3s ease 0s 1;
 }
 
 @keyframes open-anime {
@@ -107,7 +129,7 @@ export default {
     width: 70%;
   }
   100% {
-    height: 95%;
+    height: 90%;
     width: 85%;
   }
 }
@@ -128,6 +150,10 @@ export default {
   border-radius: 50%;
 }
 
+.product-modal > h1 {
+  font-size: 1.2em;
+}
+
 .product-modal button.close > img {
   width: 100%;
   height: 100%;
@@ -145,7 +171,7 @@ export default {
 
 ul.product-skill {
   display: flex;
-  justify-content: flex-end;
+  padding: 0.2em;
 }
 ul.product-skill li {
   width: 2em;
@@ -155,5 +181,11 @@ ul.product-skill li {
 ul.product-skill li img {
   width: 100%;
   height: 100%;
+}
+
+.product-link > ul > li {
+  float: left;
+  margin-left: 0.3em;
+  border-bottom: 1px solid #2e2e2e;
 }
 </style>

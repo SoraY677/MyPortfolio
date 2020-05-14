@@ -67,24 +67,10 @@ export default {
   computed: {
     changeMode() {
       if (this.isShow) {
-        // PCでのスクロール禁止
-        document.addEventListener("mousewheel", this.scrollControl, {
-          passive: false
-        });
-        // スマホでのタッチ操作でのスクロール禁止
-        document.addEventListener("touchmove", this.scrollControl, {
-          passive: false
-        });
+        document.body.style.overflow = "hidden";
         return true;
       } else {
-        // PCでのスクロール禁止解除
-        document.removeEventListener("mousewheel", this.scrollControl, {
-          passive: false
-        });
-        // スマホでのタッチ操作でのスクロール禁止解除
-        document.removeEventListener("touchmove", this.scrollControl, {
-          passive: false
-        });
+        document.body.style.overflow = "auto";
         return false;
       }
     }

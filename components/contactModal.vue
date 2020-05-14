@@ -59,6 +59,9 @@ export default {
       await this.$axios.$post(CORS_PROXY + GOOGLE_FORM_ACTION, params);
       this.$emit("close");
       alert("送信しました。ありがとうございます！");
+      this.name = "";
+      this.address = "";
+      this.body = "";
     }
   },
   computed: {

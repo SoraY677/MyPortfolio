@@ -7,7 +7,11 @@
       class="product-thumbnail"
       :src="'/img/product/' + productel.name + '.png'"
     />
-    <productModal :isShow="isModalShow" @close="closeModal" />
+    <productModal
+      :isShow="isModalShow"
+      @close="closeModal"
+      :productItem="productel"
+    />
   </div>
 </template>
 

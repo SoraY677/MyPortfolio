@@ -6,19 +6,29 @@
   >
     <button class="product-modal-cover" @click="$emit('close')"></button>
     <div ref="productModal" class="product-modal" :class="isShow">
-      <h1>hogehogetitle</h1>
+      <h1>{{ productItem.name }}</h1>
       <button class="close" @click="$emit('close')">
-        <font-awesome-icon :icon="['fa', 'fa-times']" />
+        <img src="/img/icons/times-solid.svg" />
       </button>
-      <img />
-      <ul>
-        <li>
-          <a href=""></a>
+      <div class="thumbnail">
+        <img
+          class="thumbnail"
+          :src="'/img/product/' + productItem.name + '.png'"
+        />
+      </div>
+      <!-- スキル系 -->
+      <ul class="product-skill">
+        <li v-for="skill in productItem.skill" :key="skill.id">
+          <img :src="'/img/skill/' + skill + '.svg'" />
         </li>
       </ul>
+
+      <!-- 説明文 -->
       <div class="description">
-        <p>hogehoge</p>
+        <p>{{ productItem.description }}</p>
       </div>
+
+      <!--  -->
     </div>
   </div>
 </template>
@@ -26,6 +36,7 @@
 <script>
 export default {
   props: {
+    productItem: {},
     isShow: ""
   },
   methods: {
@@ -36,26 +47,12 @@ export default {
   },
   computed: {
     changeModal() {
-      console.log(this.isShow);
       if (this.isShow == "open") {
-        // PCでのスクロール禁止
-        document.addEventListener("mousewheel", this.scrollControl, {
-          passive: false
-        });
-        // スマホでのタッチ操作でのスクロール禁止
-        document.addEventListener("touchmove", this.scrollControl, {
-          passive: false
-        });
+        document.body.style.overflow = "hidden";
+
         return "";
       } else {
-        // PCでのスクロール禁止解除
-        document.removeEventListener("mousewheel", this.scrollControl, {
-          passive: false
-        });
-        // スマホでのタッチ操作でのスクロール禁止解除
-        document.removeEventListener("touchmove", this.scrollControl, {
-          passive: false
-        });
+        document.body.style.overflow = "auto";
         return "disable";
       }
     }
@@ -91,15 +88,16 @@ export default {
 }
 
 .product-modal {
+  position: relative;
   padding: 3%;
   border-radius: 20px;
   background-color: #fff;
-  position: relative;
+  overflow: auto;
 }
 
 .product-modal.open {
-  height: 80%;
-  width: 80%;
+  height: 95%;
+  width: 85%;
   animation: open-anime 0.6s ease 0s 1;
 }
 
@@ -109,8 +107,8 @@ export default {
     width: 70%;
   }
   100% {
-    height: 80%;
-    width: 80%;
+    height: 95%;
+    width: 85%;
   }
 }
 
@@ -121,9 +119,41 @@ export default {
   position: absolute;
   top: 2%;
   right: 2%;
-  font-size: 2em;
+  width: 3em;
+  height: 3em;
+  padding: 0.6em;
+  fill: white;
   background-color: #bf1e56;
   border: 2px solid #bf1e56;
   border-radius: 50%;
+}
+
+.product-modal button.close > img {
+  width: 100%;
+  height: 100%;
+}
+.product-modal > .thumbnail {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.product-modal > .thumbnail > img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+ul.product-skill {
+  display: flex;
+  justify-content: flex-end;
+}
+ul.product-skill li {
+  width: 2em;
+  height: 2em;
+}
+
+ul.product-skill li img {
+  width: 100%;
+  height: 100%;
 }
 </style>

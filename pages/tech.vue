@@ -149,7 +149,6 @@ export default {
         "px";
       this.$refs.levelDetailContainer.style.left = elit.x + "px";
       this.levelNum = elit.level;
-      console.log(this.$refs.tech.getBoundingClientRect().top);
     }
   }
 };
